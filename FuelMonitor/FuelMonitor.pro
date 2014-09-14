@@ -14,10 +14,14 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    dialognuevoauto.cpp
+    car.cpp \
+    gasoline.cpp \
+    newcar1.cpp
 
 HEADERS  += mainwindow.h \
-    dialognuevoauto.h
+    car.h \
+    gasoline.h \
+    newcar1.h
 
 FORMS    += mainwindow.ui \
-    dialognuevoauto.ui
+    newcar1.ui

@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'dialognuevoauto.ui'
+** Form generated from reading UI file 'dialognewcar.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.2.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_DIALOGNUEVOAUTO_H
-#define UI_DIALOGNUEVOAUTO_H
+#ifndef UI_DIALOGNEWCAR_H
+#define UI_DIALOGNEWCAR_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -35,15 +35,15 @@ public:
     QLabel *label_8;
     QLabel *label_9;
     QLabel *label_6;
-    QLineEdit *lineEdit;
-    QComboBox *comboBox;
-    QComboBox *comboBox_4;
-    QLineEdit *lineEdit_2;
-    QComboBox *comboBox_5;
-    QPushButton *pushButton;
-    QLineEdit *lineEdit_3;
-    QSpinBox *spinBox;
-    QSpinBox *spinBox_2;
+    QLineEdit *NCmodel;
+    QComboBox *NCmanufacturer;
+    QComboBox *NCstyle;
+    QLineEdit *NCnumberPlate;
+    QComboBox *NCengine;
+    QPushButton *NCcreate;
+    QLineEdit *NCnickname;
+    QSpinBox *NCyear;
+    QSpinBox *NCcylinderCapacity;
 
     void setupUi(QDialog *dialogNuevoAuto)
     {
@@ -82,37 +82,37 @@ public:
         label_6 = new QLabel(dialogNuevoAuto);
         label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setGeometry(QRect(20, 270, 131, 21));
-        lineEdit = new QLineEdit(dialogNuevoAuto);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(160, 120, 113, 27));
-        comboBox = new QComboBox(dialogNuevoAuto);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setGeometry(QRect(160, 90, 111, 27));
-        comboBox_4 = new QComboBox(dialogNuevoAuto);
-        comboBox_4->setObjectName(QStringLiteral("comboBox_4"));
-        comboBox_4->setGeometry(QRect(160, 180, 111, 27));
-        lineEdit_2 = new QLineEdit(dialogNuevoAuto);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(160, 210, 113, 27));
-        comboBox_5 = new QComboBox(dialogNuevoAuto);
-        comboBox_5->setObjectName(QStringLiteral("comboBox_5"));
-        comboBox_5->setGeometry(QRect(160, 240, 111, 27));
-        pushButton = new QPushButton(dialogNuevoAuto);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(80, 310, 99, 27));
-        lineEdit_3 = new QLineEdit(dialogNuevoAuto);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(160, 60, 113, 27));
-        spinBox = new QSpinBox(dialogNuevoAuto);
-        spinBox->setObjectName(QStringLiteral("spinBox"));
-        spinBox->setGeometry(QRect(160, 150, 111, 27));
-        spinBox->setMinimum(1957);
-        spinBox->setMaximum(2014);
-        spinBox_2 = new QSpinBox(dialogNuevoAuto);
-        spinBox_2->setObjectName(QStringLiteral("spinBox_2"));
-        spinBox_2->setGeometry(QRect(160, 270, 111, 27));
-        spinBox_2->setMinimum(2);
-        spinBox_2->setMaximum(12);
+        NCmodel = new QLineEdit(dialogNuevoAuto);
+        NCmodel->setObjectName(QStringLiteral("NCmodel"));
+        NCmodel->setGeometry(QRect(160, 120, 113, 27));
+        NCmanufacturer = new QComboBox(dialogNuevoAuto);
+        NCmanufacturer->setObjectName(QStringLiteral("NCmanufacturer"));
+        NCmanufacturer->setGeometry(QRect(160, 90, 111, 27));
+        NCstyle = new QComboBox(dialogNuevoAuto);
+        NCstyle->setObjectName(QStringLiteral("NCstyle"));
+        NCstyle->setGeometry(QRect(160, 180, 111, 27));
+        NCnumberPlate = new QLineEdit(dialogNuevoAuto);
+        NCnumberPlate->setObjectName(QStringLiteral("NCnumberPlate"));
+        NCnumberPlate->setGeometry(QRect(160, 210, 113, 27));
+        NCengine = new QComboBox(dialogNuevoAuto);
+        NCengine->setObjectName(QStringLiteral("NCengine"));
+        NCengine->setGeometry(QRect(160, 240, 111, 27));
+        NCcreate = new QPushButton(dialogNuevoAuto);
+        NCcreate->setObjectName(QStringLiteral("NCcreate"));
+        NCcreate->setGeometry(QRect(80, 310, 99, 27));
+        NCnickname = new QLineEdit(dialogNuevoAuto);
+        NCnickname->setObjectName(QStringLiteral("NCnickname"));
+        NCnickname->setGeometry(QRect(160, 60, 113, 27));
+        NCyear = new QSpinBox(dialogNuevoAuto);
+        NCyear->setObjectName(QStringLiteral("NCyear"));
+        NCyear->setGeometry(QRect(160, 150, 111, 27));
+        NCyear->setMinimum(1957);
+        NCyear->setMaximum(2014);
+        NCcylinderCapacity = new QSpinBox(dialogNuevoAuto);
+        NCcylinderCapacity->setObjectName(QStringLiteral("NCcylinderCapacity"));
+        NCcylinderCapacity->setGeometry(QRect(160, 270, 111, 27));
+        NCcylinderCapacity->setMinimum(2);
+        NCcylinderCapacity->setMaximum(12);
 
         retranslateUi(dialogNuevoAuto);
 
@@ -122,7 +122,7 @@ public:
     void retranslateUi(QDialog *dialogNuevoAuto)
     {
         dialogNuevoAuto->setWindowTitle(QApplication::translate("dialogNuevoAuto", "Dialog", 0));
-        label->setText(QApplication::translate("dialogNuevoAuto", "Nuevo Auto", 0));
+        label->setText(QApplication::translate("dialogNuevoAuto", "NEW CAR", 0));
         label_2->setText(QApplication::translate("dialogNuevoAuto", "Nickname:", 0));
         label_3->setText(QApplication::translate("dialogNuevoAuto", "Model:", 0));
         label_4->setText(QApplication::translate("dialogNuevoAuto", "Year:", 0));
@@ -131,8 +131,8 @@ public:
         label_8->setText(QApplication::translate("dialogNuevoAuto", "Engine:", 0));
         label_9->setText(QApplication::translate("dialogNuevoAuto", "Manufacturer:", 0));
         label_6->setText(QApplication::translate("dialogNuevoAuto", "Cylinder Capacity:", 0));
-        comboBox->clear();
-        comboBox->insertItems(0, QStringList()
+        NCmanufacturer->clear();
+        NCmanufacturer->insertItems(0, QStringList()
          << QApplication::translate("dialogNuevoAuto", "ACURA", 0)
          << QApplication::translate("dialogNuevoAuto", "ALFA ROMEO", 0)
          << QApplication::translate("dialogNuevoAuto", "ASTON MARTIN", 0)
@@ -205,18 +205,18 @@ public:
          << QApplication::translate("dialogNuevoAuto", "VOLKSWAGEN", 0)
          << QApplication::translate("dialogNuevoAuto", "VOLVO", 0)
         );
-        comboBox_4->clear();
-        comboBox_4->insertItems(0, QStringList()
+        NCstyle->clear();
+        NCstyle->insertItems(0, QStringList()
          << QApplication::translate("dialogNuevoAuto", "Tourism", 0)
          << QApplication::translate("dialogNuevoAuto", "Pick up", 0)
          << QApplication::translate("dialogNuevoAuto", "Van", 0)
         );
-        comboBox_5->clear();
-        comboBox_5->insertItems(0, QStringList()
+        NCengine->clear();
+        NCengine->insertItems(0, QStringList()
          << QApplication::translate("dialogNuevoAuto", "Automatic", 0)
          << QApplication::translate("dialogNuevoAuto", "Manual", 0)
         );
-        pushButton->setText(QApplication::translate("dialogNuevoAuto", "CREAR", 0));
+        NCcreate->setText(QApplication::translate("dialogNuevoAuto", "CREATE", 0));
     } // retranslateUi
 
 };
@@ -227,4 +227,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // UI_DIALOGNUEVOAUTO_H
+#endif // UI_DIALOGNEWCAR_H

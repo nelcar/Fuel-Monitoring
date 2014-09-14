@@ -47,13 +47,17 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../FuelMonitor/main.cpp \
 		../FuelMonitor/mainwindow.cpp \
-		../FuelMonitor/dialognuevoauto.cpp moc_mainwindow.cpp \
-		moc_dialognuevoauto.cpp
+		../FuelMonitor/car.cpp \
+		../FuelMonitor/gasoline.cpp \
+		../FuelMonitor/newcar1.cpp moc_mainwindow.cpp \
+		moc_newcar1.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
-		dialognuevoauto.o \
+		car.o \
+		gasoline.o \
+		newcar1.o \
 		moc_mainwindow.o \
-		moc_dialognuevoauto.o
+		moc_newcar1.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/shell-unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -145,7 +149,7 @@ first: all
 
 all: Makefile $(TARGET)
 
-$(TARGET): ui_mainwindow.h ui_dialognuevoauto.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_newcar1.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 	{ test -n "$(DESTDIR)" && DESTDIR="$(DESTDIR)" || DESTDIR=.; } && test $$(gdb --version | sed -e 's,[^0-9][^0-9]*\([0-9]\)\.\([0-9]\).*,\1\2,;q') -gt 72 && gdb --nx --batch --quiet -ex 'set confirm off' -ex "save gdb-index $$DESTDIR" -ex quit '$(TARGET)' && test -f $(TARGET).gdb-index && objcopy --add-section '.gdb_index=$(TARGET).gdb-index' --set-section-flags '.gdb_index=readonly' '$(TARGET)' '$(TARGET)' && rm -f $(TARGET).gdb-index || true
 
@@ -285,7 +289,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d .tmp/FuelMonitor1.0.0 || mkdir -p .tmp/FuelMonitor1.0.0
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/FuelMonitor1.0.0/ && $(COPY_FILE) --parents ../FuelMonitor/mainwindow.h ../FuelMonitor/dialognuevoauto.h .tmp/FuelMonitor1.0.0/ && $(COPY_FILE) --parents ../FuelMonitor/main.cpp ../FuelMonitor/mainwindow.cpp ../FuelMonitor/dialognuevoauto.cpp .tmp/FuelMonitor1.0.0/ && $(COPY_FILE) --parents ../FuelMonitor/mainwindow.ui ../FuelMonitor/dialognuevoauto.ui .tmp/FuelMonitor1.0.0/ && (cd `dirname .tmp/FuelMonitor1.0.0` && $(TAR) FuelMonitor1.0.0.tar FuelMonitor1.0.0 && $(COMPRESS) FuelMonitor1.0.0.tar) && $(MOVE) `dirname .tmp/FuelMonitor1.0.0`/FuelMonitor1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/FuelMonitor1.0.0
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/FuelMonitor1.0.0/ && $(COPY_FILE) --parents ../FuelMonitor/mainwindow.h ../FuelMonitor/car.h ../FuelMonitor/gasoline.h ../FuelMonitor/newcar1.h .tmp/FuelMonitor1.0.0/ && $(COPY_FILE) --parents ../FuelMonitor/main.cpp ../FuelMonitor/mainwindow.cpp ../FuelMonitor/car.cpp ../FuelMonitor/gasoline.cpp ../FuelMonitor/newcar1.cpp .tmp/FuelMonitor1.0.0/ && $(COPY_FILE) --parents ../FuelMonitor/mainwindow.ui ../FuelMonitor/newcar1.ui .tmp/FuelMonitor1.0.0/ && (cd `dirname .tmp/FuelMonitor1.0.0` && $(TAR) FuelMonitor1.0.0.tar FuelMonitor1.0.0 && $(COMPRESS) FuelMonitor1.0.0.tar) && $(MOVE) `dirname .tmp/FuelMonitor1.0.0`/FuelMonitor1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/FuelMonitor1.0.0
 
 
 clean:compiler_clean 
@@ -308,9 +312,9 @@ check: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_dialognuevoauto.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_newcar1.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_dialognuevoauto.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_newcar1.cpp
 moc_mainwindow.cpp: /usr/include/qt5/QtWidgets/QMainWindow \
 		/usr/include/qt5/QtWidgets/qmainwindow.h \
 		/usr/include/qt5/QtWidgets/qwidget.h \
@@ -425,7 +429,7 @@ moc_mainwindow.cpp: /usr/include/qt5/QtWidgets/QMainWindow \
 		../FuelMonitor/mainwindow.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) $(INCPATH) -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../FuelMonitor/mainwindow.h -o moc_mainwindow.cpp
 
-moc_dialognuevoauto.cpp: /usr/include/qt5/QtWidgets/QDialog \
+moc_newcar1.cpp: /usr/include/qt5/QtWidgets/QDialog \
 		/usr/include/qt5/QtWidgets/qdialog.h \
 		/usr/include/qt5/QtWidgets/qwidget.h \
 		/usr/include/qt5/QtGui/qwindowdefs.h \
@@ -534,19 +538,19 @@ moc_dialognuevoauto.cpp: /usr/include/qt5/QtWidgets/QDialog \
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
-		../FuelMonitor/dialognuevoauto.h
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) $(INCPATH) -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../FuelMonitor/dialognuevoauto.h -o moc_dialognuevoauto.cpp
+		../FuelMonitor/newcar1.h
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) $(INCPATH) -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../FuelMonitor/newcar1.h -o moc_newcar1.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_dialognuevoauto.h
+compiler_uic_make_all: ui_mainwindow.h ui_newcar1.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_dialognuevoauto.h
+	-$(DEL_FILE) ui_mainwindow.h ui_newcar1.h
 ui_mainwindow.h: ../FuelMonitor/mainwindow.ui
 	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../FuelMonitor/mainwindow.ui -o ui_mainwindow.h
 
-ui_dialognuevoauto.h: ../FuelMonitor/dialognuevoauto.ui
-	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../FuelMonitor/dialognuevoauto.ui -o ui_dialognuevoauto.h
+ui_newcar1.h: ../FuelMonitor/newcar1.ui
+	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../FuelMonitor/newcar1.ui -o ui_newcar1.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -831,13 +835,146 @@ mainwindow.o: ../FuelMonitor/mainwindow.cpp ../FuelMonitor/mainwindow.h \
 		/usr/include/qt5/QtWidgets/qstatusbar.h \
 		/usr/include/qt5/QtWidgets/QToolBar \
 		/usr/include/qt5/QtWidgets/qtoolbar.h \
-		/usr/include/qt5/QtWidgets/QWidget \
-		../FuelMonitor/dialognuevoauto.h \
-		/usr/include/qt5/QtWidgets/QDialog \
-		/usr/include/qt5/QtWidgets/qdialog.h
+		/usr/include/qt5/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../FuelMonitor/mainwindow.cpp
 
-dialognuevoauto.o: ../FuelMonitor/dialognuevoauto.cpp ../FuelMonitor/dialognuevoauto.h \
+car.o: ../FuelMonitor/car.cpp ../FuelMonitor/car.h \
+		/usr/include/qt5/QtCore/QString \
+		/usr/include/qt5/QtCore/qstring.h \
+		/usr/include/qt5/QtCore/qchar.h \
+		/usr/include/qt5/QtCore/qglobal.h \
+		/usr/include/qt5/QtCore/qconfig.h \
+		/usr/include/qt5/QtCore/qfeatures.h \
+		/usr/include/qt5/QtCore/qsystemdetection.h \
+		/usr/include/qt5/QtCore/qprocessordetection.h \
+		/usr/include/qt5/QtCore/qcompilerdetection.h \
+		/usr/include/qt5/QtCore/qglobalstatic.h \
+		/usr/include/qt5/QtCore/qatomic.h \
+		/usr/include/qt5/QtCore/qbasicatomic.h \
+		/usr/include/qt5/QtCore/qatomic_bootstrap.h \
+		/usr/include/qt5/QtCore/qgenericatomic.h \
+		/usr/include/qt5/QtCore/qatomic_msvc.h \
+		/usr/include/qt5/QtCore/qatomic_integrity.h \
+		/usr/include/qt5/QtCore/qoldbasicatomic.h \
+		/usr/include/qt5/QtCore/qatomic_vxworks.h \
+		/usr/include/qt5/QtCore/qatomic_power.h \
+		/usr/include/qt5/QtCore/qatomic_alpha.h \
+		/usr/include/qt5/QtCore/qatomic_armv7.h \
+		/usr/include/qt5/QtCore/qatomic_armv6.h \
+		/usr/include/qt5/QtCore/qatomic_armv5.h \
+		/usr/include/qt5/QtCore/qatomic_bfin.h \
+		/usr/include/qt5/QtCore/qatomic_ia64.h \
+		/usr/include/qt5/QtCore/qatomic_mips.h \
+		/usr/include/qt5/QtCore/qatomic_s390.h \
+		/usr/include/qt5/QtCore/qatomic_sh4a.h \
+		/usr/include/qt5/QtCore/qatomic_sparc.h \
+		/usr/include/qt5/QtCore/qatomic_gcc.h \
+		/usr/include/qt5/QtCore/qatomic_x86.h \
+		/usr/include/qt5/QtCore/qatomic_cxx11.h \
+		/usr/include/qt5/QtCore/qatomic_unix.h \
+		/usr/include/qt5/QtCore/qmutex.h \
+		/usr/include/qt5/QtCore/qlogging.h \
+		/usr/include/qt5/QtCore/qflags.h \
+		/usr/include/qt5/QtCore/qtypeinfo.h \
+		/usr/include/qt5/QtCore/qtypetraits.h \
+		/usr/include/qt5/QtCore/qsysinfo.h \
+		/usr/include/qt5/QtCore/qbytearray.h \
+		/usr/include/qt5/QtCore/qrefcount.h \
+		/usr/include/qt5/QtCore/qnamespace.h \
+		/usr/include/qt5/QtCore/qarraydata.h \
+		/usr/include/qt5/QtCore/qstringbuilder.h \
+		/usr/include/qt5/QtCore/QList \
+		/usr/include/qt5/QtCore/qlist.h \
+		/usr/include/qt5/QtCore/qalgorithms.h \
+		/usr/include/qt5/QtCore/qiterator.h \
+		../FuelMonitor/gasoline.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
+		/usr/include/qt5/QtCore/qsharedpointer.h \
+		/usr/include/qt5/QtCore/qshareddata.h \
+		/usr/include/qt5/QtCore/qsharedpointer_impl.h \
+		/usr/include/qt5/QtCore/qobject.h \
+		/usr/include/qt5/QtCore/qobjectdefs.h \
+		/usr/include/qt5/QtCore/qobjectdefs_impl.h \
+		/usr/include/qt5/QtCore/qcoreevent.h \
+		/usr/include/qt5/QtCore/qscopedpointer.h \
+		/usr/include/qt5/QtCore/qmetatype.h \
+		/usr/include/qt5/QtCore/qvarlengtharray.h \
+		/usr/include/qt5/QtCore/qcontainerfwd.h \
+		/usr/include/qt5/QtCore/qisenum.h \
+		/usr/include/qt5/QtCore/qobject_impl.h \
+		/usr/include/qt5/QtCore/qhash.h \
+		/usr/include/qt5/QtCore/qpair.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o car.o ../FuelMonitor/car.cpp
+
+gasoline.o: ../FuelMonitor/gasoline.cpp ../FuelMonitor/gasoline.h \
+		/usr/include/qt5/QtCore/QString \
+		/usr/include/qt5/QtCore/qstring.h \
+		/usr/include/qt5/QtCore/qchar.h \
+		/usr/include/qt5/QtCore/qglobal.h \
+		/usr/include/qt5/QtCore/qconfig.h \
+		/usr/include/qt5/QtCore/qfeatures.h \
+		/usr/include/qt5/QtCore/qsystemdetection.h \
+		/usr/include/qt5/QtCore/qprocessordetection.h \
+		/usr/include/qt5/QtCore/qcompilerdetection.h \
+		/usr/include/qt5/QtCore/qglobalstatic.h \
+		/usr/include/qt5/QtCore/qatomic.h \
+		/usr/include/qt5/QtCore/qbasicatomic.h \
+		/usr/include/qt5/QtCore/qatomic_bootstrap.h \
+		/usr/include/qt5/QtCore/qgenericatomic.h \
+		/usr/include/qt5/QtCore/qatomic_msvc.h \
+		/usr/include/qt5/QtCore/qatomic_integrity.h \
+		/usr/include/qt5/QtCore/qoldbasicatomic.h \
+		/usr/include/qt5/QtCore/qatomic_vxworks.h \
+		/usr/include/qt5/QtCore/qatomic_power.h \
+		/usr/include/qt5/QtCore/qatomic_alpha.h \
+		/usr/include/qt5/QtCore/qatomic_armv7.h \
+		/usr/include/qt5/QtCore/qatomic_armv6.h \
+		/usr/include/qt5/QtCore/qatomic_armv5.h \
+		/usr/include/qt5/QtCore/qatomic_bfin.h \
+		/usr/include/qt5/QtCore/qatomic_ia64.h \
+		/usr/include/qt5/QtCore/qatomic_mips.h \
+		/usr/include/qt5/QtCore/qatomic_s390.h \
+		/usr/include/qt5/QtCore/qatomic_sh4a.h \
+		/usr/include/qt5/QtCore/qatomic_sparc.h \
+		/usr/include/qt5/QtCore/qatomic_gcc.h \
+		/usr/include/qt5/QtCore/qatomic_x86.h \
+		/usr/include/qt5/QtCore/qatomic_cxx11.h \
+		/usr/include/qt5/QtCore/qatomic_unix.h \
+		/usr/include/qt5/QtCore/qmutex.h \
+		/usr/include/qt5/QtCore/qlogging.h \
+		/usr/include/qt5/QtCore/qflags.h \
+		/usr/include/qt5/QtCore/qtypeinfo.h \
+		/usr/include/qt5/QtCore/qtypetraits.h \
+		/usr/include/qt5/QtCore/qsysinfo.h \
+		/usr/include/qt5/QtCore/qbytearray.h \
+		/usr/include/qt5/QtCore/qrefcount.h \
+		/usr/include/qt5/QtCore/qnamespace.h \
+		/usr/include/qt5/QtCore/qarraydata.h \
+		/usr/include/qt5/QtCore/qstringbuilder.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
+		/usr/include/qt5/QtCore/qsharedpointer.h \
+		/usr/include/qt5/QtCore/qshareddata.h \
+		/usr/include/qt5/QtCore/qsharedpointer_impl.h \
+		/usr/include/qt5/QtCore/qobject.h \
+		/usr/include/qt5/QtCore/qobjectdefs.h \
+		/usr/include/qt5/QtCore/qobjectdefs_impl.h \
+		/usr/include/qt5/QtCore/qlist.h \
+		/usr/include/qt5/QtCore/qalgorithms.h \
+		/usr/include/qt5/QtCore/qiterator.h \
+		/usr/include/qt5/QtCore/qcoreevent.h \
+		/usr/include/qt5/QtCore/qscopedpointer.h \
+		/usr/include/qt5/QtCore/qmetatype.h \
+		/usr/include/qt5/QtCore/qvarlengtharray.h \
+		/usr/include/qt5/QtCore/qcontainerfwd.h \
+		/usr/include/qt5/QtCore/qisenum.h \
+		/usr/include/qt5/QtCore/qobject_impl.h \
+		/usr/include/qt5/QtCore/qhash.h \
+		/usr/include/qt5/QtCore/qpair.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gasoline.o ../FuelMonitor/gasoline.cpp
+
+newcar1.o: ../FuelMonitor/newcar1.cpp ../FuelMonitor/newcar1.h \
 		/usr/include/qt5/QtWidgets/QDialog \
 		/usr/include/qt5/QtWidgets/qdialog.h \
 		/usr/include/qt5/QtWidgets/qwidget.h \
@@ -947,14 +1084,14 @@ dialognuevoauto.o: ../FuelMonitor/dialognuevoauto.cpp ../FuelMonitor/dialognuevo
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
-		ui_dialognuevoauto.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dialognuevoauto.o ../FuelMonitor/dialognuevoauto.cpp
+		ui_newcar1.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o newcar1.o ../FuelMonitor/newcar1.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
 
-moc_dialognuevoauto.o: moc_dialognuevoauto.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_dialognuevoauto.o moc_dialognuevoauto.cpp
+moc_newcar1.o: moc_newcar1.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_newcar1.o moc_newcar1.cpp
 
 ####### Install
 

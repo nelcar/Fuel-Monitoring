@@ -121,7 +121,7 @@ public:
 
     void retranslateUi(QDialog *newcar1)
     {
-        newcar1->setWindowTitle(QApplication::translate("newcar1", "Dialog", 0));
+        newcar1->setWindowTitle(QApplication::translate("newcar1", "Creating a new car", 0));
         NCcreate->setText(QApplication::translate("newcar1", "CREATE", 0));
         NCmanufacturer->clear();
         NCmanufacturer->insertItems(0, QStringList()

@@ -37,12 +37,12 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(532, 212);
+        MainWindow->resize(242, 217);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(30, -20, 431, 131));
+        label->setGeometry(QRect(10, 0, 231, 71));
         QFont font;
         font.setPointSize(48);
         font.setBold(true);
@@ -50,13 +50,13 @@ public:
         label->setFont(font);
         autos = new QPushButton(centralWidget);
         autos->setObjectName(QStringLiteral("autos"));
-        autos->setGeometry(QRect(40, 110, 121, 31));
+        autos->setGeometry(QRect(50, 90, 121, 31));
         QIcon icon;
         icon.addFile(QStringLiteral("Imagenes/open.png"), QSize(), QIcon::Normal, QIcon::Off);
         autos->setIcon(icon);
         nuevoAuto = new QPushButton(centralWidget);
         nuevoAuto->setObjectName(QStringLiteral("nuevoAuto"));
-        nuevoAuto->setGeometry(QRect(318, 110, 121, 31));
+        nuevoAuto->setGeometry(QRect(50, 140, 121, 31));
         QIcon icon1;
         icon1.addFile(QStringLiteral("Imagenes/plus.png"), QSize(), QIcon::Normal, QIcon::Off);
         nuevoAuto->setIcon(icon1);
@@ -75,10 +75,10 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        label->setText(QApplication::translate("MainWindow", "Iniciar Sesion", 0));
-        autos->setText(QApplication::translate("MainWindow", "Autos", 0));
-        nuevoAuto->setText(QApplication::translate("MainWindow", "Nuevo Auto", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "FUEL MONITOR", 0));
+        label->setText(QApplication::translate("MainWindow", "LOG IN", 0));
+        autos->setText(QApplication::translate("MainWindow", "Saved Cars", 0));
+        nuevoAuto->setText(QApplication::translate("MainWindow", "New Car", 0));
     } // retranslateUi
 
 };

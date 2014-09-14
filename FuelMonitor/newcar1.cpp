@@ -56,7 +56,7 @@ void newcar1::on_NCcreate_clicked()
             correct = true;
         }else{
 
-        }//endl numberPlate.length
+        }//numberPlate.length end
     }else{
 
     }//model.length end

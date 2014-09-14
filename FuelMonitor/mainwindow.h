@@ -22,6 +22,8 @@ public:
 private slots:
     void on_nuevoAuto_clicked();
 
+    void on_autos_clicked();
+
 private:
     //Ui::MainWindow *ui;
 };

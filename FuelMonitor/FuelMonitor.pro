@@ -16,12 +16,15 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     car.cpp \
     gasoline.cpp \
-    newcar1.cpp
+    newcar1.cpp \
+    dialogsavedcars.cpp
 
 HEADERS  += mainwindow.h \
     car.h \
     gasoline.h \
-    newcar1.h
+    newcar1.h \
+    dialogsavedcars.h
 
 FORMS    += mainwindow.ui \
-    newcar1.ui
+    newcar1.ui \
+    dialogsavedcars.ui

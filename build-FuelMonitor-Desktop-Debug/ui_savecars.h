@@ -19,6 +19,7 @@
 #include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QTabWidget>
@@ -49,6 +50,25 @@ public:
     QRadioButton *radioButton_4;
     QPushButton *pushButton;
     QWidget *tab_2;
+    QPushButton *pushButton_5;
+    QLabel *label_6;
+    QLabel *label_7;
+    QLabel *label_8;
+    QLabel *label_9;
+    QLabel *label_10;
+    QLabel *label_11;
+    QLabel *label_12;
+    QLabel *label_13;
+    QLineEdit *lineEdit;
+    QLineEdit *lineEdit_2;
+    QLineEdit *lineEdit_3;
+    QLineEdit *lineEdit_4;
+    QLineEdit *lineEdit_5;
+    QLineEdit *lineEdit_6;
+    QLineEdit *lineEdit_7;
+    QLineEdit *lineEdit_8;
+    QPushButton *pushButton_6;
+    QPushButton *pushButton_7;
     QWidget *tan_3;
     QPushButton *pushButton_4;
 
@@ -124,6 +144,63 @@ public:
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
+        pushButton_5 = new QPushButton(tab_2);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(10, 10, 121, 27));
+        label_6 = new QLabel(tab_2);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(150, 20, 71, 16));
+        label_7 = new QLabel(tab_2);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(370, 20, 101, 16));
+        label_8 = new QLabel(tab_2);
+        label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setGeometry(QRect(150, 50, 61, 17));
+        label_9 = new QLabel(tab_2);
+        label_9->setObjectName(QStringLiteral("label_9"));
+        label_9->setGeometry(QRect(370, 50, 67, 17));
+        label_10 = new QLabel(tab_2);
+        label_10->setObjectName(QStringLiteral("label_10"));
+        label_10->setGeometry(QRect(150, 80, 51, 17));
+        label_11 = new QLabel(tab_2);
+        label_11->setObjectName(QStringLiteral("label_11"));
+        label_11->setGeometry(QRect(370, 80, 101, 17));
+        label_12 = new QLabel(tab_2);
+        label_12->setObjectName(QStringLiteral("label_12"));
+        label_12->setGeometry(QRect(150, 110, 67, 17));
+        label_13 = new QLabel(tab_2);
+        label_13->setObjectName(QStringLiteral("label_13"));
+        label_13->setGeometry(QRect(370, 110, 131, 17));
+        lineEdit = new QLineEdit(tab_2);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setGeometry(QRect(230, 20, 113, 27));
+        lineEdit_2 = new QLineEdit(tab_2);
+        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+        lineEdit_2->setGeometry(QRect(500, 20, 113, 27));
+        lineEdit_3 = new QLineEdit(tab_2);
+        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+        lineEdit_3->setGeometry(QRect(230, 50, 113, 27));
+        lineEdit_4 = new QLineEdit(tab_2);
+        lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
+        lineEdit_4->setGeometry(QRect(500, 50, 113, 27));
+        lineEdit_5 = new QLineEdit(tab_2);
+        lineEdit_5->setObjectName(QStringLiteral("lineEdit_5"));
+        lineEdit_5->setGeometry(QRect(230, 80, 113, 27));
+        lineEdit_6 = new QLineEdit(tab_2);
+        lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
+        lineEdit_6->setGeometry(QRect(500, 80, 113, 27));
+        lineEdit_7 = new QLineEdit(tab_2);
+        lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
+        lineEdit_7->setGeometry(QRect(230, 110, 113, 27));
+        lineEdit_8 = new QLineEdit(tab_2);
+        lineEdit_8->setObjectName(QStringLiteral("lineEdit_8"));
+        lineEdit_8->setGeometry(QRect(500, 110, 113, 27));
+        pushButton_6 = new QPushButton(tab_2);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setGeometry(QRect(150, 150, 471, 27));
+        pushButton_7 = new QPushButton(tab_2);
+        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
+        pushButton_7->setGeometry(QRect(10, 60, 99, 131));
         tabWidget->addTab(tab_2, QString());
         tan_3 = new QWidget();
         tan_3->setObjectName(QStringLiteral("tan_3"));
@@ -134,7 +211,7 @@ public:
 
         retranslateUi(savecars);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(savecars);
@@ -159,9 +236,20 @@ public:
         radioButton_4->setText(QApplication::translate("savecars", "Kilometers", 0));
         pushButton->setText(QApplication::translate("savecars", "ADD THE NEW REGISTER", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("savecars", "Add a New Register", 0));
+        pushButton_5->setText(QApplication::translate("savecars", "Select this car", 0));
+        label_6->setText(QApplication::translate("savecars", "Nickname:", 0));
+        label_7->setText(QApplication::translate("savecars", "Manufacturer:", 0));
+        label_8->setText(QApplication::translate("savecars", "Model:", 0));
+        label_9->setText(QApplication::translate("savecars", "Year:", 0));
+        label_10->setText(QApplication::translate("savecars", "Style:", 0));
+        label_11->setText(QApplication::translate("savecars", "Number Plate:", 0));
+        label_12->setText(QApplication::translate("savecars", "Engine:", 0));
+        label_13->setText(QApplication::translate("savecars", "Cylinder Capacity:", 0));
+        pushButton_6->setText(QApplication::translate("savecars", "Modify a fuel register", 0));
+        pushButton_7->setText(QApplication::translate("savecars", "Save", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("savecars", "Modify", 0));
         tabWidget->setTabText(tabWidget->indexOf(tan_3), QApplication::translate("savecars", "Delete", 0));
-        pushButton_4->setText(QApplication::translate("savecars", "PushButton", 0));
+        pushButton_4->setText(QApplication::translate("savecars", "Refresh", 0));
     } // retranslateUi
 
 };

@@ -44,6 +44,7 @@ public:
     QLabel *label_4;
     QLabel *label;
     QLabel *label_3;
+    QLabel *NCerrorLabel;
 
     void setupUi(QDialog *newcar1)
     {
@@ -113,6 +114,9 @@ public:
         label_3 = new QLabel(newcar1);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(60, 110, 67, 17));
+        NCerrorLabel = new QLabel(newcar1);
+        NCerrorLabel->setObjectName(QStringLiteral("NCerrorLabel"));
+        NCerrorLabel->setGeometry(QRect(20, 330, 321, 17));
 
         retranslateUi(newcar1);
 
@@ -217,6 +221,7 @@ public:
         label_4->setText(QApplication::translate("newcar1", "Year:", 0));
         label->setText(QApplication::translate("newcar1", "NEW CAR", 0));
         label_3->setText(QApplication::translate("newcar1", "Model:", 0));
+        NCerrorLabel->setText(QApplication::translate("newcar1", ".", 0));
     } // retranslateUi
 
 };

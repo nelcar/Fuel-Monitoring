@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'dialogsavedcars.ui'
+** Form generated from reading UI file 'savecars.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.2.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_DIALOGSAVEDCARS_H
-#define UI_DIALOGSAVEDCARS_H
+#ifndef UI_SAVECARS_H
+#define UI_SAVECARS_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -26,11 +26,13 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_DialogSavedCars
+class Ui_savecars
 {
 public:
-    QLabel *label;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
     QComboBox *SCchooseCar;
+    QLabel *label;
     QTabWidget *tabWidget;
     QWidget *tab;
     QLabel *label_2;
@@ -48,29 +50,33 @@ public:
     QPushButton *pushButton;
     QWidget *tab_2;
     QWidget *tan_3;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QPushButton *SCrefresh;
+    QPushButton *pushButton_4;
 
-    void setupUi(QDialog *DialogSavedCars)
+    void setupUi(QDialog *savecars)
     {
-        if (DialogSavedCars->objectName().isEmpty())
-            DialogSavedCars->setObjectName(QStringLiteral("DialogSavedCars"));
-        DialogSavedCars->resize(660, 394);
-        label = new QLabel(DialogSavedCars);
+        if (savecars->objectName().isEmpty())
+            savecars->setObjectName(QStringLiteral("savecars"));
+        savecars->resize(688, 418);
+        pushButton_2 = new QPushButton(savecars);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(30, 350, 261, 27));
+        pushButton_3 = new QPushButton(savecars);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(410, 350, 261, 27));
+        SCchooseCar = new QComboBox(savecars);
+        SCchooseCar->setObjectName(QStringLiteral("SCchooseCar"));
+        SCchooseCar->setGeometry(QRect(190, 30, 411, 27));
+        label = new QLabel(savecars);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(10, 20, 131, 21));
+        label->setGeometry(QRect(30, 30, 131, 21));
         QFont font;
         font.setPointSize(16);
         font.setBold(true);
         font.setWeight(75);
         label->setFont(font);
-        SCchooseCar = new QComboBox(DialogSavedCars);
-        SCchooseCar->setObjectName(QStringLiteral("SCchooseCar"));
-        SCchooseCar->setGeometry(QRect(170, 20, 411, 27));
-        tabWidget = new QTabWidget(DialogSavedCars);
+        tabWidget = new QTabWidget(savecars);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(10, 50, 641, 271));
+        tabWidget->setGeometry(QRect(30, 60, 641, 271));
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
         label_2 = new QLabel(tab);
@@ -122,54 +128,48 @@ public:
         tan_3 = new QWidget();
         tan_3->setObjectName(QStringLiteral("tan_3"));
         tabWidget->addTab(tan_3, QString());
-        pushButton_2 = new QPushButton(DialogSavedCars);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(10, 340, 261, 27));
-        pushButton_3 = new QPushButton(DialogSavedCars);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(390, 340, 261, 27));
-        SCrefresh = new QPushButton(DialogSavedCars);
-        SCrefresh->setObjectName(QStringLiteral("SCrefresh"));
-        SCrefresh->setGeometry(QRect(590, 20, 31, 27));
+        pushButton_4 = new QPushButton(savecars);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(220, 0, 99, 27));
 
-        retranslateUi(DialogSavedCars);
+        retranslateUi(savecars);
 
         tabWidget->setCurrentIndex(0);
 
 
-        QMetaObject::connectSlotsByName(DialogSavedCars);
+        QMetaObject::connectSlotsByName(savecars);
     } // setupUi
 
-    void retranslateUi(QDialog *DialogSavedCars)
+    void retranslateUi(QDialog *savecars)
     {
-        DialogSavedCars->setWindowTitle(QApplication::translate("DialogSavedCars", "Save cars", 0));
-        label->setText(QApplication::translate("DialogSavedCars", "Choose a car:", 0));
+        savecars->setWindowTitle(QApplication::translate("savecars", "Dialog", 0));
+        pushButton_2->setText(QApplication::translate("savecars", "REPORT ALL CARS", 0));
+        pushButton_3->setText(QApplication::translate("savecars", "COMPLETE REPORT OF THIS CAR", 0));
+        label->setText(QApplication::translate("savecars", "Choose a car:", 0));
 #ifndef QT_NO_ACCESSIBILITY
         tab->setAccessibleName(QString());
 #endif // QT_NO_ACCESSIBILITY
-        label_2->setText(QApplication::translate("DialogSavedCars", "Date:", 0));
-        label_3->setText(QApplication::translate("DialogSavedCars", "Amount of value:", 0));
-        label_4->setText(QApplication::translate("DialogSavedCars", "Amount of fuel:", 0));
-        label_5->setText(QApplication::translate("DialogSavedCars", "Podometer:", 0));
-        radioButton->setText(QApplication::translate("DialogSavedCars", "Liters", 0));
-        radioButton_2->setText(QApplication::translate("DialogSavedCars", "Gallons", 0));
-        radioButton_3->setText(QApplication::translate("DialogSavedCars", "Miles", 0));
-        radioButton_4->setText(QApplication::translate("DialogSavedCars", "Kilometers", 0));
-        pushButton->setText(QApplication::translate("DialogSavedCars", "ADD THE NEW REGISTER", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("DialogSavedCars", "Add a New Register", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("DialogSavedCars", "Modify", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tan_3), QApplication::translate("DialogSavedCars", "Delete", 0));
-        pushButton_2->setText(QApplication::translate("DialogSavedCars", "REPORT ALL CARS", 0));
-        pushButton_3->setText(QApplication::translate("DialogSavedCars", "COMPLETE REPORT OF THIS CAR", 0));
-        SCrefresh->setText(QApplication::translate("DialogSavedCars", "()", 0));
+        label_2->setText(QApplication::translate("savecars", "Date:", 0));
+        label_3->setText(QApplication::translate("savecars", "Amount of value:", 0));
+        label_4->setText(QApplication::translate("savecars", "Amount of fuel:", 0));
+        label_5->setText(QApplication::translate("savecars", "Podometer:", 0));
+        radioButton->setText(QApplication::translate("savecars", "Liters", 0));
+        radioButton_2->setText(QApplication::translate("savecars", "Gallons", 0));
+        radioButton_3->setText(QApplication::translate("savecars", "Miles", 0));
+        radioButton_4->setText(QApplication::translate("savecars", "Kilometers", 0));
+        pushButton->setText(QApplication::translate("savecars", "ADD THE NEW REGISTER", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("savecars", "Add a New Register", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("savecars", "Modify", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tan_3), QApplication::translate("savecars", "Delete", 0));
+        pushButton_4->setText(QApplication::translate("savecars", "PushButton", 0));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class DialogSavedCars: public Ui_DialogSavedCars {};
+    class savecars: public Ui_savecars {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // UI_DIALOGSAVEDCARS_H
+#endif // UI_SAVECARS_H

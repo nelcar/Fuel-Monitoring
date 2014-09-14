@@ -4,7 +4,7 @@
 #include "gasoline.h"
 #include "QString"
 #include "QList"
-
+#include "QMessageBox"
 newcar1::newcar1(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::newcar1)
@@ -19,8 +19,10 @@ newcar1::~newcar1()
 
 void newcar1::on_NCcreate_clicked()
 {
+    ui->NCerrorLabel->setText("");
     //Variable
     Car car;
+    QMessageBox msgBox;
     QString nickname;
     QString manufacturer;
     QString model;
@@ -53,18 +55,25 @@ void newcar1::on_NCcreate_clicked()
             car.setEngine(engine);
             car.setCylinderCapacity(cylinderCapacity);
             main->carList.append(car);
+            msgBox.setText(QString::number(main->carList.size()));
+            msgBox.exec();
             correct = true;
         }else{
-
+            ui->NCerrorLabel->setText("MISSING FILL THE FIELD OF NUMBER PLATE");
         }//numberPlate.length end
     }else{
-
+        ui->NCerrorLabel->setText("MISSING FILL THE FIELD OF MODEL");
     }//model.length end
 
     //Show correct message
     if(correct){
-
+        msgBox.setText("New car was created");
+        msgBox.exec();
+        ui->NCnickname->setText("");
+        ui->NCmodel->setText("");
+        ui->NCnumberPlate->setText("");
     }else{
-
+        msgBox.setText("Problems Creating new car \nSee bottom part for more information");
+        msgBox.exec();
     }
 }

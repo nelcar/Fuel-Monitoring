@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "newcar1.h"
-#include "dialogsavedcars.h"
+#include "savecars.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,6 +15,16 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+QList<Car> MainWindow::getCarList() const
+{
+    return carList;
+}
+
+void MainWindow::setCarList(const QList<Car> &value)
+{
+    carList = value;
+}
+
 
 void MainWindow::on_nuevoAuto_clicked()
 {
@@ -25,7 +35,7 @@ void MainWindow::on_nuevoAuto_clicked()
 
 void MainWindow::on_autos_clicked()
 {
-    DialogSavedCars x;
+    savecars x;
     x.setModal(true);
     x.exec();
 }

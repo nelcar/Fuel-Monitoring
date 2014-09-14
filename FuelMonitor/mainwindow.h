@@ -19,6 +19,9 @@ public:
     ~MainWindow();
     Ui::MainWindow *ui;
     QList<Car> carList;
+    QList<Car> getCarList() const;
+    void setCarList(const QList<Car> &value);
+
 private slots:
     void on_nuevoAuto_clicked();
 

@@ -6,6 +6,8 @@
 #include "QMessageBox"
 #include "modifyregisters.h"
 #include "deleteregisters.h"
+#include "reportallcars.h"
+#include "reportthiscar.h"
 savecars::savecars(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::savecars)
@@ -43,6 +45,20 @@ void savecars::on_pushButton_6_clicked()
 void savecars::on_pushButton_10_clicked()
 {
     deleteregisters x;
+    x.setModal(true);
+    x.exec();
+}
+
+void savecars::on_pushButton_3_clicked()
+{
+    reportthiscar x;
+    x.setModal(true);
+    x.exec();
+}
+
+void savecars::on_pushButton_2_clicked()
+{
+    reportallcars x;
     x.setModal(true);
     x.exec();
 }

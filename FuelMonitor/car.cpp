@@ -10,6 +10,11 @@ Car::~Car()
 
 }
 
+QString Car::toString() const
+{
+    return nickname + " " + numberPlate;
+}
+
 QString Car::getNickname() const
 {
     return nickname;

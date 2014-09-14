@@ -19,6 +19,7 @@ class Car
 public:
     Car();
     ~Car();
+    QString toString() const;
     QString getNickname() const;
     void setNickname(const QString &value);
     QString getManufacturer() const;

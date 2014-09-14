@@ -17,14 +17,20 @@ SOURCES += main.cpp\
     car.cpp \
     gasoline.cpp \
     newcar1.cpp \
-    savecars.cpp
+    savecars.cpp \
+    modifyregisters.cpp \
+    deleteregisters.cpp
 
 HEADERS  += mainwindow.h \
     car.h \
     gasoline.h \
     newcar1.h \
-    savecars.h
+    savecars.h \
+    modifyregisters.h \
+    deleteregisters.h
 
 FORMS    += mainwindow.ui \
     newcar1.ui \
-    savecars.ui
+    savecars.ui \
+    modifyregisters.ui \
+    deleteregisters.ui

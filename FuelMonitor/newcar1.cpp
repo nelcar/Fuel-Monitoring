@@ -39,12 +39,12 @@ void newcar1::on_NCcreate_clicked()
     manufacturer = ui->NCmanufacturer->currentText();
     model = ui->NCmodel->text();
     if(model.length() > 0){
-        year = "" + ui->NCyear->value();
+        year = QString::number(ui->NCyear->value());
         style = ui->NCstyle->currentText();
         numberPlate = ui->NCnumberPlate->text();
         if(numberPlate.length() > 0){
             engine = ui->NCengine->currentText();
-            cylinderCapacity = ui->NCcylinderCapacity->value();
+            cylinderCapacity = QString::number(ui->NCcylinderCapacity->value());
 
             //save it on QList
             car->setNickname(nickname);

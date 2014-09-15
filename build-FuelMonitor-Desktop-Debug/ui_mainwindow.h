@@ -30,6 +30,8 @@ public:
     QLabel *label;
     QPushButton *autos;
     QPushButton *nuevoAuto;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -37,12 +39,12 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(242, 217);
+        MainWindow->resize(346, 183);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(10, 0, 231, 71));
+        label->setGeometry(QRect(60, 0, 231, 71));
         QFont font;
         font.setPointSize(48);
         font.setBold(true);
@@ -50,16 +52,22 @@ public:
         label->setFont(font);
         autos = new QPushButton(centralWidget);
         autos->setObjectName(QStringLiteral("autos"));
-        autos->setGeometry(QRect(50, 90, 121, 31));
+        autos->setGeometry(QRect(10, 70, 121, 31));
         QIcon icon;
         icon.addFile(QStringLiteral("Imagenes/open.png"), QSize(), QIcon::Normal, QIcon::Off);
         autos->setIcon(icon);
         nuevoAuto = new QPushButton(centralWidget);
         nuevoAuto->setObjectName(QStringLiteral("nuevoAuto"));
-        nuevoAuto->setGeometry(QRect(50, 140, 121, 31));
+        nuevoAuto->setGeometry(QRect(210, 70, 121, 31));
         QIcon icon1;
         icon1.addFile(QStringLiteral("Imagenes/plus.png"), QSize(), QIcon::Normal, QIcon::Off);
         nuevoAuto->setIcon(icon1);
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(10, 110, 121, 31));
+        pushButton_2 = new QPushButton(centralWidget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(210, 110, 121, 31));
         MainWindow->setCentralWidget(centralWidget);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -79,6 +87,8 @@ public:
         label->setText(QApplication::translate("MainWindow", "LOG IN", 0));
         autos->setText(QApplication::translate("MainWindow", "Saved Cars", 0));
         nuevoAuto->setText(QApplication::translate("MainWindow", "New Car", 0));
+        pushButton->setText(QApplication::translate("MainWindow", "Cargar Bitacora", 0));
+        pushButton_2->setText(QApplication::translate("MainWindow", "Guardar Bitacora", 0));
     } // retranslateUi
 
 };

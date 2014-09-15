@@ -283,7 +283,7 @@ public:
         tabWidget->addTab(tan_3, QString());
         pushButton_4 = new QPushButton(savecars);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(220, 0, 99, 27));
+        pushButton_4->setGeometry(QRect(610, 30, 71, 27));
 
         retranslateUi(savecars);
 

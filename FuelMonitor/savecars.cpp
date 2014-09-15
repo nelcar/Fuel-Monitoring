@@ -8,6 +8,8 @@
 #include "reportallcars.h"
 #include "reportthiscar.h"
 #include "QDate"
+#include <iostream>
+using namespace std;
 
 savecars::savecars(QWidget *parent, vector<Car*> *carList) :
     QDialog(parent),
@@ -111,6 +113,10 @@ void savecars::on_addNewRegister_clicked()
     fuel.push_back(g);
     x->setGasolineList(fuel);
     this->carList->push_back(x);
-    this->carList->erase(carList->begin()+selected);
+    this->carList->erase(carList->begin()+(selected));
+    ui->SCaddPodometer->setValue(0);
+    ui->SCaddAmountFuel->setValue(0);
+    ui->SCaddAmountValue->setValue(0);
+
 }
 

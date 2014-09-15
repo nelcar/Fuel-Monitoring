@@ -39,12 +39,12 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(346, 183);
+        MainWindow->resize(545, 153);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(60, 0, 231, 71));
+        label->setGeometry(QRect(20, 0, 491, 71));
         QFont font;
         font.setPointSize(48);
         font.setBold(true);
@@ -58,16 +58,16 @@ public:
         autos->setIcon(icon);
         nuevoAuto = new QPushButton(centralWidget);
         nuevoAuto->setObjectName(QStringLiteral("nuevoAuto"));
-        nuevoAuto->setGeometry(QRect(210, 70, 121, 31));
+        nuevoAuto->setGeometry(QRect(140, 70, 121, 31));
         QIcon icon1;
         icon1.addFile(QStringLiteral("Imagenes/plus.png"), QSize(), QIcon::Normal, QIcon::Off);
         nuevoAuto->setIcon(icon1);
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(10, 110, 121, 31));
+        pushButton->setGeometry(QRect(270, 70, 121, 31));
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(210, 110, 121, 31));
+        pushButton_2->setGeometry(QRect(400, 70, 121, 31));
         MainWindow->setCentralWidget(centralWidget);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -84,11 +84,11 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "FUEL MONITOR", 0));
-        label->setText(QApplication::translate("MainWindow", "LOG IN", 0));
+        label->setText(QApplication::translate("MainWindow", "FUEL MONITOR", 0));
         autos->setText(QApplication::translate("MainWindow", "Saved Cars", 0));
         nuevoAuto->setText(QApplication::translate("MainWindow", "New Car", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "Cargar Bitacora", 0));
-        pushButton_2->setText(QApplication::translate("MainWindow", "Guardar Bitacora", 0));
+        pushButton->setText(QApplication::translate("MainWindow", "Log Load", 0));
+        pushButton_2->setText(QApplication::translate("MainWindow", "Log Save", 0));
     } // retranslateUi
 
 };

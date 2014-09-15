@@ -7,6 +7,8 @@
 #include "deleteregisters.h"
 #include "reportallcars.h"
 #include "reportthiscar.h"
+#include "QDate"
+
 savecars::savecars(QWidget *parent, vector<Car*> *carList) :
     QDialog(parent),
     ui(new Ui::savecars)
@@ -64,7 +66,51 @@ void savecars::on_pushButton_2_clicked()
 
 void savecars::on_addNewRegister_clicked()
 {
-    int selected = ui->SCchooseCar->currentIndex();
+    int selected;
+    QDate date;
+    double odometer;
+    double amountFuel;
+    double amountValue;
+    double miles;
+    double kilometers;
+    double liters;
+    double gallons;
+    selected = ui->SCchooseCar->currentIndex();
+    date = ui->SCaddDate->date();
+    odometer = ui->SCaddPodometer->value();
+    amountFuel = ui->SCaddAmountFuel->value();
+    amountValue = ui->SCaddAmountValue->value();
 
+    if(ui->SCdistance->currentIndex() == 0){
+        miles = odometer;
+        kilometers = miles*1.609344;
+    }else{
+        kilometers = odometer;
+        miles = kilometers*0.621371192;
+    }
+
+    if(ui->SCcapacity->currentIndex() == 0){
+        liters = amountFuel;
+        gallons = liters*0.264172052;
+    }else{
+        gallons = amountFuel;
+        liters = gallons*3.78541178;
+    }
+    gasoline g;
+    g.setCurrency(amountValue);
+    g.setDate(date);
+    g.setGallons(gallons);
+    g.setKilometers(kilometers);
+    g.setLiters(liters);
+    g.setMiles(miles);
+
+    Car *x = NULL;
+    x = static_cast<Car*>(carList->at(selected));
+    vector<gasoline> fuel;
+    fuel = x->getGasolineList();
+    fuel.push_back(g);
+    x->setGasolineList(fuel);
+    this->carList->push_back(x);
+    this->carList->erase(carList->begin()+selected);
 }
 

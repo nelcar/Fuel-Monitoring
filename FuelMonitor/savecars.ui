@@ -137,7 +137,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Podometer:</string>
+      <string>odometer:</string>
      </property>
     </widget>
     <widget class="QDateEdit" name="SCaddDate">
@@ -202,7 +202,7 @@
       <string>ADD THE NEW REGISTER</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox">
+    <widget class="QComboBox" name="SCdistance">
      <property name="geometry">
       <rect>
        <x>330</x>
@@ -222,7 +222,7 @@
       </property>
      </item>
     </widget>
-    <widget class="QComboBox" name="comboBox_2">
+    <widget class="QComboBox" name="SCcapacity">
      <property name="geometry">
       <rect>
        <x>330</x>

@@ -8,7 +8,9 @@ class gasoline
     QDate date;
     double currency;
     double liters;
-    double pedometer;
+    double gallons;
+    double miles;
+    double kilometers;
 public:
     gasoline();
     QDate getDate() const;
@@ -17,8 +19,12 @@ public:
     void setCurrency(double value);
     double getLiters() const;
     void setLiters(double value);
-    double getPedometer() const;
-    void setPedometer(double value);
+    double getGallons() const;
+    void setGallons(double value);
+    double getMiles() const;
+    void setMiles(double value);
+    double getKilometers() const;
+    void setKilometers(double value);
 };
 
 #endif // GASOLINE_H

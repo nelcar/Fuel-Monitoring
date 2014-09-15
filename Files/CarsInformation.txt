@@ -1,2 +1,2 @@
-Bimbo,ACURA,mi,1957,Tourism,sidsi8,Automatic,2
-NEgro,ACURA,usdusu,1957,Tourism,usdusu,Automatic,2
+Manuel,ACURA,aq,1957,Tourism,aq,Automatic,2
+nelson,ACURA,sds,1957,Tourism,sds,Automatic,2

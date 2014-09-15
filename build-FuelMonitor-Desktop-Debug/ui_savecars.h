@@ -44,8 +44,8 @@ public:
     QDoubleSpinBox *SCaddAmountValue;
     QDoubleSpinBox *SCaddAmountFuel;
     QPushButton *addNewRegister;
-    QComboBox *comboBox;
-    QComboBox *comboBox_2;
+    QComboBox *SCdistance;
+    QComboBox *SCcapacity;
     QWidget *tab_2;
     QPushButton *pushButton_5;
     QLabel *label_6;
@@ -145,12 +145,12 @@ public:
         addNewRegister = new QPushButton(tab);
         addNewRegister->setObjectName(QStringLiteral("addNewRegister"));
         addNewRegister->setGeometry(QRect(20, 190, 561, 27));
-        comboBox = new QComboBox(tab);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setGeometry(QRect(330, 80, 281, 27));
-        comboBox_2 = new QComboBox(tab);
-        comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
-        comboBox_2->setGeometry(QRect(330, 140, 281, 27));
+        SCdistance = new QComboBox(tab);
+        SCdistance->setObjectName(QStringLiteral("SCdistance"));
+        SCdistance->setGeometry(QRect(330, 80, 281, 27));
+        SCcapacity = new QComboBox(tab);
+        SCcapacity->setObjectName(QStringLiteral("SCcapacity"));
+        SCcapacity->setGeometry(QRect(330, 140, 281, 27));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
@@ -296,15 +296,15 @@ public:
         label_2->setText(QApplication::translate("savecars", "Date:", 0));
         label_3->setText(QApplication::translate("savecars", "Amount of value:", 0));
         label_4->setText(QApplication::translate("savecars", "Amount of fuel:", 0));
-        label_5->setText(QApplication::translate("savecars", "Podometer:", 0));
+        label_5->setText(QApplication::translate("savecars", "odometer:", 0));
         addNewRegister->setText(QApplication::translate("savecars", "ADD THE NEW REGISTER", 0));
-        comboBox->clear();
-        comboBox->insertItems(0, QStringList()
+        SCdistance->clear();
+        SCdistance->insertItems(0, QStringList()
          << QApplication::translate("savecars", "Miles", 0)
          << QApplication::translate("savecars", "Kilometers", 0)
         );
-        comboBox_2->clear();
-        comboBox_2->insertItems(0, QStringList()
+        SCcapacity->clear();
+        SCcapacity->insertItems(0, QStringList()
          << QApplication::translate("savecars", "Liters", 0)
          << QApplication::translate("savecars", "Gallons", 0)
         );

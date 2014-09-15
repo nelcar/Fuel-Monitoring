@@ -31,14 +31,35 @@ void gasoline::setLiters(double value)
     liters = value;
 }
 
-double gasoline::getPedometer() const
+
+double gasoline::getGallons() const
 {
-    return pedometer;
+    return gallons;
 }
 
-void gasoline::setPedometer(double value)
+void gasoline::setGallons(double value)
 {
-    pedometer = value;
+    gallons = value;
+}
+
+double gasoline::getMiles() const
+{
+    return miles;
+}
+
+void gasoline::setMiles(double value)
+{
+    miles = value;
+}
+
+double gasoline::getKilometers() const
+{
+    return kilometers;
+}
+
+void gasoline::setKilometers(double value)
+{
+    kilometers = value;
 }
 gasoline::gasoline()
 {

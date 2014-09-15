@@ -21,7 +21,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QWidget>
 
@@ -40,15 +39,13 @@ public:
     QLabel *label_3;
     QLabel *label_4;
     QLabel *label_5;
-    QDateEdit *addDate;
-    QDoubleSpinBox *addPodometer;
-    QDoubleSpinBox *AddAmountValue;
-    QDoubleSpinBox *addAmountFuel;
-    QRadioButton *addLiters;
-    QRadioButton *addGallons;
-    QRadioButton *AddMiles;
-    QRadioButton *addKilometers;
+    QDateEdit *SCaddDate;
+    QDoubleSpinBox *SCaddPodometer;
+    QDoubleSpinBox *SCaddAmountValue;
+    QDoubleSpinBox *SCaddAmountFuel;
     QPushButton *addNewRegister;
+    QComboBox *comboBox;
+    QComboBox *comboBox_2;
     QWidget *tab_2;
     QPushButton *pushButton_5;
     QLabel *label_6;
@@ -123,43 +120,37 @@ public:
         label_2->setGeometry(QRect(20, 20, 67, 17));
         label_3 = new QLabel(tab);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(20, 100, 121, 17));
+        label_3->setGeometry(QRect(330, 20, 121, 17));
         label_4 = new QLabel(tab);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(20, 140, 111, 17));
         label_5 = new QLabel(tab);
         label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(20, 60, 91, 17));
-        addDate = new QDateEdit(tab);
-        addDate->setObjectName(QStringLiteral("addDate"));
-        addDate->setGeometry(QRect(160, 20, 141, 27));
-        addPodometer = new QDoubleSpinBox(tab);
-        addPodometer->setObjectName(QStringLiteral("addPodometer"));
-        addPodometer->setGeometry(QRect(160, 60, 141, 27));
-        addPodometer->setMaximum(1e+06);
-        AddAmountValue = new QDoubleSpinBox(tab);
-        AddAmountValue->setObjectName(QStringLiteral("AddAmountValue"));
-        AddAmountValue->setGeometry(QRect(160, 100, 141, 27));
-        AddAmountValue->setMaximum(100000);
-        addAmountFuel = new QDoubleSpinBox(tab);
-        addAmountFuel->setObjectName(QStringLiteral("addAmountFuel"));
-        addAmountFuel->setGeometry(QRect(160, 140, 141, 27));
-        addAmountFuel->setMaximum(10000);
-        addLiters = new QRadioButton(tab);
-        addLiters->setObjectName(QStringLiteral("addLiters"));
-        addLiters->setGeometry(QRect(330, 140, 71, 22));
-        addGallons = new QRadioButton(tab);
-        addGallons->setObjectName(QStringLiteral("addGallons"));
-        addGallons->setGeometry(QRect(410, 140, 81, 22));
-        AddMiles = new QRadioButton(tab);
-        AddMiles->setObjectName(QStringLiteral("AddMiles"));
-        AddMiles->setGeometry(QRect(330, 60, 71, 22));
-        addKilometers = new QRadioButton(tab);
-        addKilometers->setObjectName(QStringLiteral("addKilometers"));
-        addKilometers->setGeometry(QRect(410, 60, 117, 22));
+        label_5->setGeometry(QRect(20, 90, 91, 17));
+        SCaddDate = new QDateEdit(tab);
+        SCaddDate->setObjectName(QStringLiteral("SCaddDate"));
+        SCaddDate->setGeometry(QRect(160, 20, 141, 27));
+        SCaddPodometer = new QDoubleSpinBox(tab);
+        SCaddPodometer->setObjectName(QStringLiteral("SCaddPodometer"));
+        SCaddPodometer->setGeometry(QRect(160, 80, 141, 27));
+        SCaddPodometer->setMaximum(1e+06);
+        SCaddAmountValue = new QDoubleSpinBox(tab);
+        SCaddAmountValue->setObjectName(QStringLiteral("SCaddAmountValue"));
+        SCaddAmountValue->setGeometry(QRect(470, 20, 141, 27));
+        SCaddAmountValue->setMaximum(100000);
+        SCaddAmountFuel = new QDoubleSpinBox(tab);
+        SCaddAmountFuel->setObjectName(QStringLiteral("SCaddAmountFuel"));
+        SCaddAmountFuel->setGeometry(QRect(160, 140, 141, 27));
+        SCaddAmountFuel->setMaximum(10000);
         addNewRegister = new QPushButton(tab);
         addNewRegister->setObjectName(QStringLiteral("addNewRegister"));
         addNewRegister->setGeometry(QRect(20, 190, 561, 27));
+        comboBox = new QComboBox(tab);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+        comboBox->setGeometry(QRect(330, 80, 281, 27));
+        comboBox_2 = new QComboBox(tab);
+        comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
+        comboBox_2->setGeometry(QRect(330, 140, 281, 27));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
@@ -306,11 +297,17 @@ public:
         label_3->setText(QApplication::translate("savecars", "Amount of value:", 0));
         label_4->setText(QApplication::translate("savecars", "Amount of fuel:", 0));
         label_5->setText(QApplication::translate("savecars", "Podometer:", 0));
-        addLiters->setText(QApplication::translate("savecars", "Liters", 0));
-        addGallons->setText(QApplication::translate("savecars", "Gallons", 0));
-        AddMiles->setText(QApplication::translate("savecars", "Miles", 0));
-        addKilometers->setText(QApplication::translate("savecars", "Kilometers", 0));
         addNewRegister->setText(QApplication::translate("savecars", "ADD THE NEW REGISTER", 0));
+        comboBox->clear();
+        comboBox->insertItems(0, QStringList()
+         << QApplication::translate("savecars", "Miles", 0)
+         << QApplication::translate("savecars", "Kilometers", 0)
+        );
+        comboBox_2->clear();
+        comboBox_2->insertItems(0, QStringList()
+         << QApplication::translate("savecars", "Liters", 0)
+         << QApplication::translate("savecars", "Gallons", 0)
+        );
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("savecars", "Add a New Register", 0));
         pushButton_5->setText(QApplication::translate("savecars", "Select this car", 0));
         label_6->setText(QApplication::translate("savecars", "Nickname:", 0));

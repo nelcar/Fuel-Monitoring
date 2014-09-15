@@ -104,8 +104,8 @@
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>100</y>
+       <x>330</x>
+       <y>20</y>
        <width>121</width>
        <height>17</height>
       </rect>
@@ -131,7 +131,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>60</y>
+       <y>90</y>
        <width>91</width>
        <height>17</height>
       </rect>
@@ -140,7 +140,7 @@
       <string>Podometer:</string>
      </property>
     </widget>
-    <widget class="QDateEdit" name="addDate">
+    <widget class="QDateEdit" name="SCaddDate">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -150,11 +150,11 @@
       </rect>
      </property>
     </widget>
-    <widget class="QDoubleSpinBox" name="addPodometer">
+    <widget class="QDoubleSpinBox" name="SCaddPodometer">
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>60</y>
+       <y>80</y>
        <width>141</width>
        <height>27</height>
       </rect>
@@ -163,11 +163,11 @@
       <double>999999.989999999990687</double>
      </property>
     </widget>
-    <widget class="QDoubleSpinBox" name="AddAmountValue">
+    <widget class="QDoubleSpinBox" name="SCaddAmountValue">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>100</y>
+       <x>470</x>
+       <y>20</y>
        <width>141</width>
        <height>27</height>
       </rect>
@@ -176,7 +176,7 @@
       <double>99999.990000000005239</double>
      </property>
     </widget>
-    <widget class="QDoubleSpinBox" name="addAmountFuel">
+    <widget class="QDoubleSpinBox" name="SCaddAmountFuel">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -187,58 +187,6 @@
      </property>
      <property name="maximum">
       <double>10000.000000000000000</double>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="addLiters">
-     <property name="geometry">
-      <rect>
-       <x>330</x>
-       <y>140</y>
-       <width>71</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Liters</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="addGallons">
-     <property name="geometry">
-      <rect>
-       <x>410</x>
-       <y>140</y>
-       <width>81</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Gallons</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="AddMiles">
-     <property name="geometry">
-      <rect>
-       <x>330</x>
-       <y>60</y>
-       <width>71</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Miles</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="addKilometers">
-     <property name="geometry">
-      <rect>
-       <x>410</x>
-       <y>60</y>
-       <width>117</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Kilometers</string>
      </property>
     </widget>
     <widget class="QPushButton" name="addNewRegister">
@@ -253,6 +201,46 @@
      <property name="text">
       <string>ADD THE NEW REGISTER</string>
      </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>80</y>
+       <width>281</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Miles</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Kilometers</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="comboBox_2">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>140</y>
+       <width>281</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Liters</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Gallons</string>
+      </property>
+     </item>
     </widget>
    </widget>
    <widget class="QWidget" name="tab_2">

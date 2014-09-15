@@ -31,6 +31,8 @@ private slots:
 
     void on_addNewRegister_clicked();
 
+    void on_SCaddMiles_clicked();
+
 private:
     Ui::savecars *ui;
 };

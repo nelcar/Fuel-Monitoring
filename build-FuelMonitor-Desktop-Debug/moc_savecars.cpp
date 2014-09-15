@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_savecars_t {
-    QByteArrayData data[9];
-    char stringdata[180];
+    QByteArrayData data[10];
+    char stringdata[202];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,13 +37,15 @@ QT_MOC_LITERAL(4, 58, 24),
 QT_MOC_LITERAL(5, 83, 23),
 QT_MOC_LITERAL(6, 107, 23),
 QT_MOC_LITERAL(7, 131, 21),
-QT_MOC_LITERAL(8, 153, 25)
+QT_MOC_LITERAL(8, 153, 25),
+QT_MOC_LITERAL(9, 179, 21)
     },
     "savecars\0on_pushButton_4_clicked\0\0"
     "on_pushButton_6_clicked\0"
     "on_pushButton_10_clicked\0"
     "on_pushButton_3_clicked\0on_pushButton_2_clicked\0"
     "on_pushButton_clicked\0on_addNewRegister_clicked\0"
+    "on_SCaddMiles_clicked\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -53,7 +55,7 @@ static const uint qt_meta_data_savecars[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -61,15 +63,17 @@ static const uint qt_meta_data_savecars[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   49,    2, 0x08,
-       3,    0,   50,    2, 0x08,
-       4,    0,   51,    2, 0x08,
-       5,    0,   52,    2, 0x08,
-       6,    0,   53,    2, 0x08,
-       7,    0,   54,    2, 0x08,
-       8,    0,   55,    2, 0x08,
+       1,    0,   54,    2, 0x08,
+       3,    0,   55,    2, 0x08,
+       4,    0,   56,    2, 0x08,
+       5,    0,   57,    2, 0x08,
+       6,    0,   58,    2, 0x08,
+       7,    0,   59,    2, 0x08,
+       8,    0,   60,    2, 0x08,
+       9,    0,   61,    2, 0x08,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -123,13 +127,13 @@ int savecars::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 8)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 7;
+        _id -= 8;
     }
     return _id;
 }

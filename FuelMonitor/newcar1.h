@@ -1,8 +1,9 @@
 #ifndef NEWCAR1_H
 #define NEWCAR1_H
-#include "mainwindow.h"
 #include <QDialog>
-
+#include <vector>
+#include "car.h"
+using std::vector;
 namespace Ui {
 class newcar1;
 }
@@ -13,10 +14,9 @@ class newcar1 : public QDialog
 
 public:
 
-    explicit newcar1(QWidget *parent = 0);
+    explicit newcar1(QWidget *parent, vector<Car*> *carList);
     ~newcar1();
-    MainWindow* main;
-
+    vector<Car*> *carList;
 private slots:
     void on_NCcreate_clicked();
 

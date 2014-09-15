@@ -5,11 +5,12 @@
 #include "QString"
 #include "QList"
 #include "QMessageBox"
-newcar1::newcar1(QWidget *parent) :
+newcar1::newcar1(QWidget *parent,vector<Car*> *carList) :
     QDialog(parent),
     ui(new Ui::newcar1)
 {
     ui->setupUi(this);
+    this->carList = carList;
 }
 
 newcar1::~newcar1()
@@ -21,7 +22,7 @@ void newcar1::on_NCcreate_clicked()
 {
     ui->NCerrorLabel->setText("");
     //Variable
-    Car car;
+    Car* car = new Car();
     QMessageBox msgBox;
     QString nickname;
     QString manufacturer;
@@ -46,17 +47,15 @@ void newcar1::on_NCcreate_clicked()
             cylinderCapacity = ui->NCcylinderCapacity->value();
 
             //save it on QList
-            car.setNickname(nickname);
-            car.setManufacturer(manufacturer);
-            car.setModel(model);
-            car.setYear(year);
-            car.setStyle(style);
-            car.setNumberPlate(numberPlate);
-            car.setEngine(engine);
-            car.setCylinderCapacity(cylinderCapacity);
-            main->carList.append(car);
-            msgBox.setText(QString::number(main->carList.size()));
-            msgBox.exec();
+            car->setNickname(nickname);
+            car->setManufacturer(manufacturer);
+            car->setModel(model);
+            car->setYear(year);
+            car->setStyle(style);
+            car->setNumberPlate(numberPlate);
+            car->setEngine(engine);
+            car->setCylinderCapacity(cylinderCapacity);
+            this->carList->push_back(car);
             correct = true;
         }else{
             ui->NCerrorLabel->setText("MISSING FILL THE FIELD OF NUMBER PLATE");

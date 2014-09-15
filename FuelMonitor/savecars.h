@@ -1,8 +1,9 @@
 #ifndef SAVECARS_H
 #define SAVECARS_H
-#include "mainwindow.h"
 #include <QDialog>
+#include "car.h"
 
+using std::vector;
 namespace Ui {
 class savecars;
 }
@@ -12,10 +13,9 @@ class savecars : public QDialog
     Q_OBJECT
 
 public:
-    explicit savecars(QWidget *parent = 0);
+    explicit savecars(QWidget *parent, vector<Car*> *carList);
     ~savecars();
-    MainWindow* main;
-
+    vector <Car*> *carList;
 private slots:
     void on_pushButton_4_clicked();
 

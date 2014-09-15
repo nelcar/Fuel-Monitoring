@@ -59,7 +59,7 @@ void MainWindow::on_pushButton_2_clicked()
              << x->getStyle().toStdString() << ","
              << x->getNumberPlate().toStdString() << ","
              << x->getEngine().toStdString() << ","
-             << x->getCylinderCapacity().toStdString();
+             << x->getCylinderCapacity().toStdString() << ",";
         vector<gasoline> fuel;
         fuel = x->getGasolineList();
         gasoline y;
@@ -70,7 +70,7 @@ void MainWindow::on_pushButton_2_clicked()
                  << y.getMiles() << ","
                  << y.getKilometers() << ","
                  << y.getLiters() << ","
-                 << y.getGallons() << ",";
+                 << y.getGallons();
         }
         File << "\n";
     }
@@ -79,14 +79,38 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-    string root = "../Files/CarsInformation.txt";
+    string route = "../Files/CarsInformation.txt";
     ifstream File;
-    File.open(root.c_str(),ios::in);
-    int lines = 0;
-    string lineas = "";
-
+    File.open(route.c_str(),ios::in); //open the file
+    string lines = "";
+    QString linestaken;
+    QStringList parts;
+    int con = 0;
     while(!File.eof()){
-        getline(File,lineas);
+        getline(File,lines);
+        linestaken =QString::fromStdString(lines);
+        parts = linestaken.split(",");
 
+        QString nickname = parts[0];
+        QString manufacturer = parts[1];
+        QString model = parts[2];
+        QString year = parts[3];
+        QString style = parts[4];
+        QString numberPlate = parts[5];
+        QString engine = parts[6];
+        QString cylinder = parts[7];
+
+        Car* car = new Car();
+        car->setNickname(nickname);
+        car->setManufacturer(manufacturer);
+        car->setModel(model);
+        car->setYear(year);
+        car->setStyle(style);
+        car->setNumberPlate(numberPlate);
+        car->setEngine(engine);
+        car->setCylinderCapacity(cylinder);
+        carList->push_back(car);
+        con++;
     }
+    File.close();
 }

@@ -96,6 +96,10 @@ void savecars::on_addNewRegister_clicked()
         gallons = amountFuel;
         liters = gallons*3.78541178;
     }
+    QMessageBox msgBox;
+    msgBox.setText("pasa asignacion variable");
+    msgBox.exec();
+
     gasoline g;
     g.setCurrency(amountValue);
     g.setDate(date);
@@ -104,6 +108,8 @@ void savecars::on_addNewRegister_clicked()
     g.setLiters(liters);
     g.setMiles(miles);
 
+    msgBox.setText("pasa gasolina *g");
+    msgBox.exec();
     Car *x = NULL;
     x = static_cast<Car*>(carList->at(selected));
     vector<gasoline> fuel;

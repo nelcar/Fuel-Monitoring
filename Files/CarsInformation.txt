@@ -1,2 +1,1 @@
-Manuel,ACURA,aq,1957,Tourism,aq,Automatic,2
-nelson,ACURA,sds,1957,Tourism,sds,Automatic,2
+hondita,HONDA,civic,1957,Tourism,sdsd,Automatic,2sáb ene 1 2000,0,0,0,0,0,sáb ene 1 2000,43534.4,45435.4,73121.3,3443.43,909.658,

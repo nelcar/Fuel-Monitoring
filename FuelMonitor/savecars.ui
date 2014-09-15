@@ -79,7 +79,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <property name="accessibleName">
@@ -140,7 +140,7 @@
       <string>Podometer:</string>
      </property>
     </widget>
-    <widget class="QDateEdit" name="dateEdit">
+    <widget class="QDateEdit" name="addDate">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -150,7 +150,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QDoubleSpinBox" name="doubleSpinBox">
+    <widget class="QDoubleSpinBox" name="addPodometer">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -163,7 +163,7 @@
       <double>999999.989999999990687</double>
      </property>
     </widget>
-    <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+    <widget class="QDoubleSpinBox" name="AddAmountValue">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -176,7 +176,7 @@
       <double>99999.990000000005239</double>
      </property>
     </widget>
-    <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
+    <widget class="QDoubleSpinBox" name="addAmountFuel">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -189,7 +189,7 @@
       <double>10000.000000000000000</double>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton">
+    <widget class="QRadioButton" name="addLiters">
      <property name="geometry">
       <rect>
        <x>330</x>
@@ -202,7 +202,7 @@
       <string>Liters</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton_2">
+    <widget class="QRadioButton" name="addGallons">
      <property name="geometry">
       <rect>
        <x>410</x>
@@ -215,7 +215,7 @@
       <string>Gallons</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton_3">
+    <widget class="QRadioButton" name="AddMiles">
      <property name="geometry">
       <rect>
        <x>330</x>
@@ -228,7 +228,7 @@
       <string>Miles</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton_4">
+    <widget class="QRadioButton" name="addKilometers">
      <property name="geometry">
       <rect>
        <x>410</x>
@@ -241,7 +241,7 @@
       <string>Kilometers</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="addNewRegister">
      <property name="geometry">
       <rect>
        <x>20</x>

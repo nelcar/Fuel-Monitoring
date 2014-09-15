@@ -1,9 +1,9 @@
 #ifndef CAR_H
 #define CAR_H
 #include <QString>
-#include <QList>
 #include "gasoline.h"
-
+#include <vector>
+using std::vector;
 class Car
 {
     QString nickname;
@@ -14,7 +14,7 @@ class Car
     QString numberPlate;
     QString engine;
     QString cylinderCapacity;
-    QList <gasoline> gasolineList;
+    vector<gasoline> gasolineList;
 
 public:
     Car();
@@ -36,7 +36,7 @@ public:
     void setEngine(const QString &value);
     QString getCylinderCapacity() const;
     void setCylinderCapacity(const QString &value);
-    QList<gasoline> getGasolineList() const;
-    void setGasolineList(const QList<gasoline> &value);
+    vector<gasoline> getGasolineList() const;
+    void setGasolineList(const vector<gasoline> &value);
 };
 #endif // CAR_H

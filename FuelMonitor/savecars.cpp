@@ -30,6 +30,8 @@ void savecars::on_pushButton_4_clicked()
         x = static_cast<Car*>(carList->at(i));
         ui->SCchooseCar->addItem(x->toString());
     }
+    int selected = ui->SCchooseCar->currentIndex();
+
 }
 
 void savecars::on_pushButton_6_clicked()
@@ -58,4 +60,11 @@ void savecars::on_pushButton_2_clicked()
     reportallcars x;
     x.setModal(true);
     x.exec();
+}
+
+
+
+void savecars::on_addNewRegister_clicked()
+{
+
 }

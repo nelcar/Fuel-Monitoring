@@ -95,12 +95,12 @@ void Car::setCylinderCapacity(const QString &value)
     cylinderCapacity = value;
 }
 
-QList<gasoline> Car::getGasolineList() const
+vector<gasoline> Car::getGasolineList() const
 {
     return gasolineList;
 }
 
-void Car::setGasolineList(const QList<gasoline> &value)
+void Car::setGasolineList(const vector<gasoline> &value)
 {
     gasolineList = value;
 }

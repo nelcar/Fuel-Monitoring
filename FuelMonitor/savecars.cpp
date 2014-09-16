@@ -47,7 +47,7 @@ void savecars::on_pushButton_10_clicked()
 
 void savecars::on_pushButton_3_clicked()
 {
-    reportthiscar x;
+    reportthiscar x(this,ui->SCchooseCar->currentIndex(),this->carList);
     x.setModal(true);
     x.exec();
 }

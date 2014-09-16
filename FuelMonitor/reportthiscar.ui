@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>662</width>
-    <height>416</height>
+    <width>978</width>
+    <height>568</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,60 +16,60 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>160</y>
+     <x>10</x>
+     <y>310</y>
      <width>141</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>Gallons/Kilometers</string>
+    <string>Gallons/Kilometers:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>160</y>
+     <x>10</x>
+     <y>350</y>
      <width>131</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>Gallons/Miles</string>
+    <string>Gallons/Miles:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>200</y>
+     <x>300</x>
+     <y>310</y>
      <width>131</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>Liters/Kilometers</string>
+    <string>Liters/Kilometers:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>200</y>
+     <x>300</x>
+     <y>350</y>
      <width>131</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>Liters/Miles</string>
+    <string>Liters/Miles:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>240</y>
+     <x>300</x>
+     <y>450</y>
      <width>121</width>
      <height>17</height>
     </rect>
@@ -81,8 +81,8 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>240</y>
+     <x>10</x>
+     <y>450</y>
      <width>121</width>
      <height>17</height>
     </rect>
@@ -94,8 +94,8 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>280</y>
+     <x>10</x>
+     <y>390</y>
      <width>121</width>
      <height>17</height>
     </rect>
@@ -107,8 +107,8 @@
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>280</y>
+     <x>300</x>
+     <y>390</y>
      <width>121</width>
      <height>17</height>
     </rect>
@@ -120,8 +120,8 @@
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>320</y>
+     <x>600</x>
+     <y>390</y>
      <width>81</width>
      <height>17</height>
     </rect>
@@ -133,8 +133,8 @@
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>320</y>
+     <x>600</x>
+     <y>350</y>
      <width>101</width>
      <height>17</height>
     </rect>
@@ -146,8 +146,8 @@
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>360</y>
+     <x>600</x>
+     <y>310</y>
      <width>101</width>
      <height>17</height>
     </rect>
@@ -182,8 +182,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>160</y>
+     <x>150</x>
+     <y>310</y>
      <width>113</width>
      <height>27</height>
     </rect>
@@ -195,8 +195,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>200</y>
+     <x>440</x>
+     <y>310</y>
      <width>113</width>
      <height>27</height>
     </rect>
@@ -208,8 +208,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>240</y>
+     <x>440</x>
+     <y>450</y>
      <width>113</width>
      <height>27</height>
     </rect>
@@ -221,8 +221,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>280</y>
+     <x>150</x>
+     <y>390</y>
      <width>113</width>
      <height>27</height>
     </rect>
@@ -234,8 +234,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>320</y>
+     <x>740</x>
+     <y>390</y>
      <width>113</width>
      <height>27</height>
     </rect>
@@ -247,8 +247,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>360</y>
+     <x>740</x>
+     <y>310</y>
      <width>113</width>
      <height>27</height>
     </rect>
@@ -260,8 +260,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>160</y>
+     <x>150</x>
+     <y>350</y>
      <width>113</width>
      <height>27</height>
     </rect>
@@ -273,8 +273,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>200</y>
+     <x>440</x>
+     <y>350</y>
      <width>113</width>
      <height>27</height>
     </rect>
@@ -286,8 +286,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>240</y>
+     <x>150</x>
+     <y>450</y>
      <width>113</width>
      <height>27</height>
     </rect>
@@ -299,8 +299,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>280</y>
+     <x>440</x>
+     <y>390</y>
      <width>113</width>
      <height>27</height>
     </rect>
@@ -312,8 +312,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>320</y>
+     <x>740</x>
+     <y>350</y>
      <width>113</width>
      <height>27</height>
     </rect>
@@ -322,9 +322,9 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>360</y>
-     <width>141</width>
+     <x>620</x>
+     <y>30</y>
+     <width>301</width>
      <height>27</height>
     </rect>
    </property>
@@ -335,8 +335,8 @@
   <widget class="QLabel" name="label_13">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>80</y>
+     <x>10</x>
+     <y>250</y>
      <width>91</width>
      <height>17</height>
     </rect>
@@ -348,8 +348,8 @@
   <widget class="QLabel" name="label_14">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>110</y>
+     <x>580</x>
+     <y>250</y>
      <width>81</width>
      <height>17</height>
     </rect>
@@ -361,8 +361,8 @@
   <widget class="QLabel" name="label_15">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>80</y>
+     <x>200</x>
+     <y>250</y>
      <width>81</width>
      <height>17</height>
     </rect>
@@ -374,8 +374,8 @@
   <widget class="QLabel" name="label_16">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>110</y>
+     <x>760</x>
+     <y>250</y>
      <width>121</width>
      <height>17</height>
     </rect>
@@ -390,8 +390,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>80</y>
+     <x>100</x>
+     <y>250</y>
      <width>91</width>
      <height>27</height>
     </rect>
@@ -403,8 +403,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>110</y>
+     <x>660</x>
+     <y>250</y>
      <width>91</width>
      <height>27</height>
     </rect>
@@ -416,8 +416,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>80</y>
+     <x>280</x>
+     <y>250</y>
      <width>91</width>
      <height>27</height>
     </rect>
@@ -429,8 +429,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>110</y>
+     <x>880</x>
+     <y>250</y>
      <width>91</width>
      <height>27</height>
     </rect>
@@ -439,8 +439,8 @@
   <widget class="QLabel" name="label_17">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>80</y>
+     <x>380</x>
+     <y>250</y>
      <width>91</width>
      <height>17</height>
     </rect>
@@ -452,8 +452,8 @@
   <widget class="QLabel" name="label_18">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>110</y>
+     <x>600</x>
+     <y>530</y>
      <width>91</width>
      <height>17</height>
     </rect>
@@ -468,8 +468,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>560</x>
-     <y>80</y>
+     <x>480</x>
+     <y>250</y>
      <width>91</width>
      <height>27</height>
     </rect>
@@ -481,9 +481,386 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>560</x>
-     <y>110</y>
+     <x>740</x>
+     <y>530</y>
+     <width>111</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_19">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>490</y>
+     <width>101</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Miles/Gallon:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_20">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>450</y>
+     <width>101</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Miles/Money:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_21">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>530</y>
      <width>91</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Miles/Liters:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_22">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>490</y>
+     <width>131</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Kilometers/Gallon:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_23">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>530</y>
+     <width>121</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Kilometers/Liters:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_24">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>490</y>
+     <width>131</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Kilometers/Money:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="mil_gal">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>490</y>
+     <width>113</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="mil_lit">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>530</y>
+     <width>113</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="mil_mon">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>450</y>
+     <width>113</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="kil_gal">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>490</y>
+     <width>113</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="kil_lit">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>530</y>
+     <width>113</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="kil_mon">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>490</y>
+     <width>113</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_25">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>81</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Nickname:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_26">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>130</y>
+     <width>101</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Manufacturer:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_27">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>170</y>
+     <width>101</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Model:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_28">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>130</y>
+     <width>101</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Year:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_29">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>90</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Style:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_30">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>170</y>
+     <width>111</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Number Plate:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_31">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>90</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Engine:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_32">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>130</y>
+     <width>141</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cylinder Capacity:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Rnickname">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>90</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Rmanufacturer">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>130</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Rmodel">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>170</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Rstyle">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>90</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ryear">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>130</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="RnumberPlate">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>170</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_7">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>960</x>
+     <y>520</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Rengine">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>90</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Rcylinder">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>130</y>
+     <width>131</width>
      <height>27</height>
     </rect>
    </property>

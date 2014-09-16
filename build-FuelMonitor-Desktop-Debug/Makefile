@@ -53,13 +53,11 @@ SOURCES       = ../FuelMonitor/main.cpp \
 		../FuelMonitor/savecars.cpp \
 		../FuelMonitor/modifyregisters.cpp \
 		../FuelMonitor/deleteregisters.cpp \
-		../FuelMonitor/reportallcars.cpp \
 		../FuelMonitor/reportthiscar.cpp moc_mainwindow.cpp \
 		moc_newcar1.cpp \
 		moc_savecars.cpp \
 		moc_modifyregisters.cpp \
 		moc_deleteregisters.cpp \
-		moc_reportallcars.cpp \
 		moc_reportthiscar.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
@@ -69,14 +67,12 @@ OBJECTS       = main.o \
 		savecars.o \
 		modifyregisters.o \
 		deleteregisters.o \
-		reportallcars.o \
 		reportthiscar.o \
 		moc_mainwindow.o \
 		moc_newcar1.o \
 		moc_savecars.o \
 		moc_modifyregisters.o \
 		moc_deleteregisters.o \
-		moc_reportallcars.o \
 		moc_reportthiscar.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/shell-unix.conf \
@@ -169,7 +165,7 @@ first: all
 
 all: Makefile $(TARGET)
 
-$(TARGET): ui_mainwindow.h ui_newcar1.h ui_savecars.h ui_modifyregisters.h ui_deleteregisters.h ui_reportallcars.h ui_reportthiscar.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_newcar1.h ui_savecars.h ui_modifyregisters.h ui_deleteregisters.h ui_reportthiscar.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 	{ test -n "$(DESTDIR)" && DESTDIR="$(DESTDIR)" || DESTDIR=.; } && test $$(gdb --version | sed -e 's,[^0-9][^0-9]*\([0-9]\)\.\([0-9]\).*,\1\2,;q') -gt 72 && gdb --nx --batch --quiet -ex 'set confirm off' -ex "save gdb-index $$DESTDIR" -ex quit '$(TARGET)' && test -f $(TARGET).gdb-index && objcopy --add-section '.gdb_index=$(TARGET).gdb-index' --set-section-flags '.gdb_index=readonly' '$(TARGET)' '$(TARGET)' && rm -f $(TARGET).gdb-index || true
 
@@ -309,7 +305,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d .tmp/FuelMonitor1.0.0 || mkdir -p .tmp/FuelMonitor1.0.0
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/FuelMonitor1.0.0/ && $(COPY_FILE) --parents ../FuelMonitor/mainwindow.h ../FuelMonitor/car.h ../FuelMonitor/gasoline.h ../FuelMonitor/newcar1.h ../FuelMonitor/savecars.h ../FuelMonitor/modifyregisters.h ../FuelMonitor/deleteregisters.h ../FuelMonitor/reportallcars.h ../FuelMonitor/reportthiscar.h .tmp/FuelMonitor1.0.0/ && $(COPY_FILE) --parents ../FuelMonitor/main.cpp ../FuelMonitor/mainwindow.cpp ../FuelMonitor/car.cpp ../FuelMonitor/gasoline.cpp ../FuelMonitor/newcar1.cpp ../FuelMonitor/savecars.cpp ../FuelMonitor/modifyregisters.cpp ../FuelMonitor/deleteregisters.cpp ../FuelMonitor/reportallcars.cpp ../FuelMonitor/reportthiscar.cpp .tmp/FuelMonitor1.0.0/ && $(COPY_FILE) --parents ../FuelMonitor/mainwindow.ui ../FuelMonitor/newcar1.ui ../FuelMonitor/savecars.ui ../FuelMonitor/modifyregisters.ui ../FuelMonitor/deleteregisters.ui ../FuelMonitor/reportallcars.ui ../FuelMonitor/reportthiscar.ui .tmp/FuelMonitor1.0.0/ && (cd `dirname .tmp/FuelMonitor1.0.0` && $(TAR) FuelMonitor1.0.0.tar FuelMonitor1.0.0 && $(COMPRESS) FuelMonitor1.0.0.tar) && $(MOVE) `dirname .tmp/FuelMonitor1.0.0`/FuelMonitor1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/FuelMonitor1.0.0
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/FuelMonitor1.0.0/ && $(COPY_FILE) --parents ../FuelMonitor/mainwindow.h ../FuelMonitor/car.h ../FuelMonitor/gasoline.h ../FuelMonitor/newcar1.h ../FuelMonitor/savecars.h ../FuelMonitor/modifyregisters.h ../FuelMonitor/deleteregisters.h ../FuelMonitor/reportthiscar.h .tmp/FuelMonitor1.0.0/ && $(COPY_FILE) --parents ../FuelMonitor/main.cpp ../FuelMonitor/mainwindow.cpp ../FuelMonitor/car.cpp ../FuelMonitor/gasoline.cpp ../FuelMonitor/newcar1.cpp ../FuelMonitor/savecars.cpp ../FuelMonitor/modifyregisters.cpp ../FuelMonitor/deleteregisters.cpp ../FuelMonitor/reportthiscar.cpp .tmp/FuelMonitor1.0.0/ && $(COPY_FILE) --parents ../FuelMonitor/mainwindow.ui ../FuelMonitor/newcar1.ui ../FuelMonitor/savecars.ui ../FuelMonitor/modifyregisters.ui ../FuelMonitor/deleteregisters.ui ../FuelMonitor/reportthiscar.ui .tmp/FuelMonitor1.0.0/ && (cd `dirname .tmp/FuelMonitor1.0.0` && $(TAR) FuelMonitor1.0.0.tar FuelMonitor1.0.0 && $(COMPRESS) FuelMonitor1.0.0.tar) && $(MOVE) `dirname .tmp/FuelMonitor1.0.0`/FuelMonitor1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/FuelMonitor1.0.0
 
 
 clean:compiler_clean 
@@ -332,9 +328,9 @@ check: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_newcar1.cpp moc_savecars.cpp moc_modifyregisters.cpp moc_deleteregisters.cpp moc_reportallcars.cpp moc_reportthiscar.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_newcar1.cpp moc_savecars.cpp moc_modifyregisters.cpp moc_deleteregisters.cpp moc_reportthiscar.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_newcar1.cpp moc_savecars.cpp moc_modifyregisters.cpp moc_deleteregisters.cpp moc_reportallcars.cpp moc_reportthiscar.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_newcar1.cpp moc_savecars.cpp moc_modifyregisters.cpp moc_deleteregisters.cpp moc_reportthiscar.cpp
 moc_mainwindow.cpp: /usr/include/qt5/QtWidgets/QMainWindow \
 		/usr/include/qt5/QtWidgets/qmainwindow.h \
 		/usr/include/qt5/QtWidgets/qwidget.h \
@@ -446,6 +442,11 @@ moc_mainwindow.cpp: /usr/include/qt5/QtWidgets/QMainWindow \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
 		/usr/include/qt5/QtWidgets/qtabwidget.h \
 		/usr/include/qt5/QtGui/qicon.h \
+		../FuelMonitor/car.h \
+		/usr/include/qt5/QtCore/QString \
+		../FuelMonitor/gasoline.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
 		../FuelMonitor/mainwindow.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) $(INCPATH) -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../FuelMonitor/mainwindow.h -o moc_mainwindow.cpp
 
@@ -558,6 +559,11 @@ moc_newcar1.cpp: /usr/include/qt5/QtWidgets/QDialog \
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
+		../FuelMonitor/car.h \
+		/usr/include/qt5/QtCore/QString \
+		../FuelMonitor/gasoline.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
 		../FuelMonitor/newcar1.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) $(INCPATH) -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../FuelMonitor/newcar1.h -o moc_newcar1.cpp
 
@@ -670,6 +676,11 @@ moc_savecars.cpp: /usr/include/qt5/QtWidgets/QDialog \
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
+		../FuelMonitor/car.h \
+		/usr/include/qt5/QtCore/QString \
+		../FuelMonitor/gasoline.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
 		../FuelMonitor/savecars.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) $(INCPATH) -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../FuelMonitor/savecars.h -o moc_savecars.cpp
 
@@ -782,6 +793,11 @@ moc_modifyregisters.cpp: /usr/include/qt5/QtWidgets/QDialog \
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
+		../FuelMonitor/car.h \
+		/usr/include/qt5/QtCore/QString \
+		../FuelMonitor/gasoline.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
 		../FuelMonitor/modifyregisters.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) $(INCPATH) -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../FuelMonitor/modifyregisters.h -o moc_modifyregisters.cpp
 
@@ -894,120 +910,13 @@ moc_deleteregisters.cpp: /usr/include/qt5/QtWidgets/QDialog \
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
+		../FuelMonitor/car.h \
+		/usr/include/qt5/QtCore/QString \
+		../FuelMonitor/gasoline.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
 		../FuelMonitor/deleteregisters.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) $(INCPATH) -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../FuelMonitor/deleteregisters.h -o moc_deleteregisters.cpp
-
-moc_reportallcars.cpp: /usr/include/qt5/QtWidgets/QDialog \
-		/usr/include/qt5/QtWidgets/qdialog.h \
-		/usr/include/qt5/QtWidgets/qwidget.h \
-		/usr/include/qt5/QtGui/qwindowdefs.h \
-		/usr/include/qt5/QtCore/qglobal.h \
-		/usr/include/qt5/QtCore/qconfig.h \
-		/usr/include/qt5/QtCore/qfeatures.h \
-		/usr/include/qt5/QtCore/qsystemdetection.h \
-		/usr/include/qt5/QtCore/qprocessordetection.h \
-		/usr/include/qt5/QtCore/qcompilerdetection.h \
-		/usr/include/qt5/QtCore/qglobalstatic.h \
-		/usr/include/qt5/QtCore/qatomic.h \
-		/usr/include/qt5/QtCore/qbasicatomic.h \
-		/usr/include/qt5/QtCore/qatomic_bootstrap.h \
-		/usr/include/qt5/QtCore/qgenericatomic.h \
-		/usr/include/qt5/QtCore/qatomic_msvc.h \
-		/usr/include/qt5/QtCore/qatomic_integrity.h \
-		/usr/include/qt5/QtCore/qoldbasicatomic.h \
-		/usr/include/qt5/QtCore/qatomic_vxworks.h \
-		/usr/include/qt5/QtCore/qatomic_power.h \
-		/usr/include/qt5/QtCore/qatomic_alpha.h \
-		/usr/include/qt5/QtCore/qatomic_armv7.h \
-		/usr/include/qt5/QtCore/qatomic_armv6.h \
-		/usr/include/qt5/QtCore/qatomic_armv5.h \
-		/usr/include/qt5/QtCore/qatomic_bfin.h \
-		/usr/include/qt5/QtCore/qatomic_ia64.h \
-		/usr/include/qt5/QtCore/qatomic_mips.h \
-		/usr/include/qt5/QtCore/qatomic_s390.h \
-		/usr/include/qt5/QtCore/qatomic_sh4a.h \
-		/usr/include/qt5/QtCore/qatomic_sparc.h \
-		/usr/include/qt5/QtCore/qatomic_gcc.h \
-		/usr/include/qt5/QtCore/qatomic_x86.h \
-		/usr/include/qt5/QtCore/qatomic_cxx11.h \
-		/usr/include/qt5/QtCore/qatomic_unix.h \
-		/usr/include/qt5/QtCore/qmutex.h \
-		/usr/include/qt5/QtCore/qlogging.h \
-		/usr/include/qt5/QtCore/qflags.h \
-		/usr/include/qt5/QtCore/qtypeinfo.h \
-		/usr/include/qt5/QtCore/qtypetraits.h \
-		/usr/include/qt5/QtCore/qsysinfo.h \
-		/usr/include/qt5/QtCore/qobjectdefs.h \
-		/usr/include/qt5/QtCore/qnamespace.h \
-		/usr/include/qt5/QtCore/qobjectdefs_impl.h \
-		/usr/include/qt5/QtGui/qwindowdefs_win.h \
-		/usr/include/qt5/QtCore/qobject.h \
-		/usr/include/qt5/QtCore/qstring.h \
-		/usr/include/qt5/QtCore/qchar.h \
-		/usr/include/qt5/QtCore/qbytearray.h \
-		/usr/include/qt5/QtCore/qrefcount.h \
-		/usr/include/qt5/QtCore/qarraydata.h \
-		/usr/include/qt5/QtCore/qstringbuilder.h \
-		/usr/include/qt5/QtCore/qlist.h \
-		/usr/include/qt5/QtCore/qalgorithms.h \
-		/usr/include/qt5/QtCore/qiterator.h \
-		/usr/include/qt5/QtCore/qcoreevent.h \
-		/usr/include/qt5/QtCore/qscopedpointer.h \
-		/usr/include/qt5/QtCore/qmetatype.h \
-		/usr/include/qt5/QtCore/qvarlengtharray.h \
-		/usr/include/qt5/QtCore/qcontainerfwd.h \
-		/usr/include/qt5/QtCore/qisenum.h \
-		/usr/include/qt5/QtCore/qobject_impl.h \
-		/usr/include/qt5/QtCore/qmargins.h \
-		/usr/include/qt5/QtCore/qrect.h \
-		/usr/include/qt5/QtCore/qsize.h \
-		/usr/include/qt5/QtCore/qpoint.h \
-		/usr/include/qt5/QtGui/qpaintdevice.h \
-		/usr/include/qt5/QtGui/qpalette.h \
-		/usr/include/qt5/QtGui/qcolor.h \
-		/usr/include/qt5/QtGui/qrgb.h \
-		/usr/include/qt5/QtCore/qstringlist.h \
-		/usr/include/qt5/QtCore/qdatastream.h \
-		/usr/include/qt5/QtCore/qiodevice.h \
-		/usr/include/qt5/QtCore/qpair.h \
-		/usr/include/qt5/QtCore/qregexp.h \
-		/usr/include/qt5/QtCore/qstringmatcher.h \
-		/usr/include/qt5/QtGui/qbrush.h \
-		/usr/include/qt5/QtCore/qvector.h \
-		/usr/include/qt5/QtGui/qmatrix.h \
-		/usr/include/qt5/QtGui/qpolygon.h \
-		/usr/include/qt5/QtGui/qregion.h \
-		/usr/include/qt5/QtCore/qline.h \
-		/usr/include/qt5/QtGui/qtransform.h \
-		/usr/include/qt5/QtGui/qpainterpath.h \
-		/usr/include/qt5/QtGui/qimage.h \
-		/usr/include/qt5/QtGui/qpixmap.h \
-		/usr/include/qt5/QtCore/qsharedpointer.h \
-		/usr/include/qt5/QtCore/qshareddata.h \
-		/usr/include/qt5/QtCore/qsharedpointer_impl.h \
-		/usr/include/qt5/QtCore/qhash.h \
-		/usr/include/qt5/QtGui/qfont.h \
-		/usr/include/qt5/QtGui/qfontmetrics.h \
-		/usr/include/qt5/QtGui/qfontinfo.h \
-		/usr/include/qt5/QtWidgets/qsizepolicy.h \
-		/usr/include/qt5/QtGui/qcursor.h \
-		/usr/include/qt5/QtGui/qkeysequence.h \
-		/usr/include/qt5/QtGui/qevent.h \
-		/usr/include/qt5/QtCore/qvariant.h \
-		/usr/include/qt5/QtCore/qmap.h \
-		/usr/include/qt5/QtCore/qdebug.h \
-		/usr/include/qt5/QtCore/qtextstream.h \
-		/usr/include/qt5/QtCore/qlocale.h \
-		/usr/include/qt5/QtCore/qset.h \
-		/usr/include/qt5/QtCore/qcontiguouscache.h \
-		/usr/include/qt5/QtCore/qurl.h \
-		/usr/include/qt5/QtCore/qurlquery.h \
-		/usr/include/qt5/QtCore/qfile.h \
-		/usr/include/qt5/QtCore/qfiledevice.h \
-		/usr/include/qt5/QtGui/qvector2d.h \
-		/usr/include/qt5/QtGui/qtouchdevice.h \
-		../FuelMonitor/reportallcars.h
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) $(INCPATH) -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../FuelMonitor/reportallcars.h -o moc_reportallcars.cpp
 
 moc_reportthiscar.cpp: /usr/include/qt5/QtWidgets/QDialog \
 		/usr/include/qt5/QtWidgets/qdialog.h \
@@ -1118,14 +1027,19 @@ moc_reportthiscar.cpp: /usr/include/qt5/QtWidgets/QDialog \
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
+		../FuelMonitor/car.h \
+		/usr/include/qt5/QtCore/QString \
+		../FuelMonitor/gasoline.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
 		../FuelMonitor/reportthiscar.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) $(INCPATH) -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../FuelMonitor/reportthiscar.h -o moc_reportthiscar.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_newcar1.h ui_savecars.h ui_modifyregisters.h ui_deleteregisters.h ui_reportallcars.h ui_reportthiscar.h
+compiler_uic_make_all: ui_mainwindow.h ui_newcar1.h ui_savecars.h ui_modifyregisters.h ui_deleteregisters.h ui_reportthiscar.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_newcar1.h ui_savecars.h ui_modifyregisters.h ui_deleteregisters.h ui_reportallcars.h ui_reportthiscar.h
+	-$(DEL_FILE) ui_mainwindow.h ui_newcar1.h ui_savecars.h ui_modifyregisters.h ui_deleteregisters.h ui_reportthiscar.h
 ui_mainwindow.h: ../FuelMonitor/mainwindow.ui
 	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../FuelMonitor/mainwindow.ui -o ui_mainwindow.h
 
@@ -1140,9 +1054,6 @@ ui_modifyregisters.h: ../FuelMonitor/modifyregisters.ui
 
 ui_deleteregisters.h: ../FuelMonitor/deleteregisters.ui
 	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../FuelMonitor/deleteregisters.ui -o ui_deleteregisters.h
-
-ui_reportallcars.h: ../FuelMonitor/reportallcars.ui
-	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../FuelMonitor/reportallcars.ui -o ui_reportallcars.h
 
 ui_reportthiscar.h: ../FuelMonitor/reportthiscar.ui
 	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../FuelMonitor/reportthiscar.ui -o ui_reportthiscar.h
@@ -1269,6 +1180,11 @@ main.o: ../FuelMonitor/main.cpp ../FuelMonitor/mainwindow.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
 		/usr/include/qt5/QtWidgets/qtabwidget.h \
 		/usr/include/qt5/QtGui/qicon.h \
+		../FuelMonitor/car.h \
+		/usr/include/qt5/QtCore/QString \
+		../FuelMonitor/gasoline.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
 		/usr/include/qt5/QtWidgets/QApplication \
 		/usr/include/qt5/QtWidgets/qapplication.h \
 		/usr/include/qt5/QtCore/qcoreapplication.h \
@@ -1390,6 +1306,11 @@ mainwindow.o: ../FuelMonitor/mainwindow.cpp ../FuelMonitor/mainwindow.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
 		/usr/include/qt5/QtWidgets/qtabwidget.h \
 		/usr/include/qt5/QtGui/qicon.h \
+		../FuelMonitor/car.h \
+		/usr/include/qt5/QtCore/QString \
+		../FuelMonitor/gasoline.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
 		ui_mainwindow.h \
 		/usr/include/qt5/QtCore/QVariant \
 		/usr/include/qt5/QtWidgets/QAction \
@@ -1434,7 +1355,9 @@ mainwindow.o: ../FuelMonitor/mainwindow.cpp ../FuelMonitor/mainwindow.h \
 		../FuelMonitor/newcar1.h \
 		/usr/include/qt5/QtWidgets/QDialog \
 		/usr/include/qt5/QtWidgets/qdialog.h \
-		../FuelMonitor/savecars.h
+		../FuelMonitor/savecars.h \
+		/usr/include/qt5/QtWidgets/QMessageBox \
+		/usr/include/qt5/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../FuelMonitor/mainwindow.cpp
 
 car.o: ../FuelMonitor/car.cpp ../FuelMonitor/car.h \
@@ -1482,10 +1405,6 @@ car.o: ../FuelMonitor/car.cpp ../FuelMonitor/car.h \
 		/usr/include/qt5/QtCore/qnamespace.h \
 		/usr/include/qt5/QtCore/qarraydata.h \
 		/usr/include/qt5/QtCore/qstringbuilder.h \
-		/usr/include/qt5/QtCore/QList \
-		/usr/include/qt5/QtCore/qlist.h \
-		/usr/include/qt5/QtCore/qalgorithms.h \
-		/usr/include/qt5/QtCore/qiterator.h \
 		../FuelMonitor/gasoline.h \
 		/usr/include/qt5/QtCore/QDate \
 		/usr/include/qt5/QtCore/qdatetime.h \
@@ -1495,6 +1414,9 @@ car.o: ../FuelMonitor/car.cpp ../FuelMonitor/car.h \
 		/usr/include/qt5/QtCore/qobject.h \
 		/usr/include/qt5/QtCore/qobjectdefs.h \
 		/usr/include/qt5/QtCore/qobjectdefs_impl.h \
+		/usr/include/qt5/QtCore/qlist.h \
+		/usr/include/qt5/QtCore/qalgorithms.h \
+		/usr/include/qt5/QtCore/qiterator.h \
 		/usr/include/qt5/QtCore/qcoreevent.h \
 		/usr/include/qt5/QtCore/qscopedpointer.h \
 		/usr/include/qt5/QtCore/qmetatype.h \
@@ -1683,6 +1605,11 @@ newcar1.o: ../FuelMonitor/newcar1.cpp ../FuelMonitor/newcar1.h \
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
+		../FuelMonitor/car.h \
+		/usr/include/qt5/QtCore/QString \
+		../FuelMonitor/gasoline.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
 		ui_newcar1.h \
 		/usr/include/qt5/QtCore/QVariant \
 		/usr/include/qt5/QtWidgets/QAction \
@@ -1731,12 +1658,7 @@ newcar1.o: ../FuelMonitor/newcar1.cpp ../FuelMonitor/newcar1.h \
 		/usr/include/qt5/QtWidgets/qabstractbutton.h \
 		/usr/include/qt5/QtWidgets/QSpinBox \
 		/usr/include/qt5/QtWidgets/qspinbox.h \
-		../FuelMonitor/car.h \
-		/usr/include/qt5/QtCore/QString \
 		/usr/include/qt5/QtCore/QList \
-		../FuelMonitor/gasoline.h \
-		/usr/include/qt5/QtCore/QDate \
-		/usr/include/qt5/QtCore/qdatetime.h \
 		/usr/include/qt5/QtWidgets/QMessageBox \
 		/usr/include/qt5/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o newcar1.o ../FuelMonitor/newcar1.cpp
@@ -1851,6 +1773,11 @@ savecars.o: ../FuelMonitor/savecars.cpp ../FuelMonitor/savecars.h \
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
+		../FuelMonitor/car.h \
+		/usr/include/qt5/QtCore/QString \
+		../FuelMonitor/gasoline.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
 		ui_savecars.h \
 		/usr/include/qt5/QtCore/QVariant \
 		/usr/include/qt5/QtWidgets/QAction \
@@ -1883,7 +1810,6 @@ savecars.o: ../FuelMonitor/savecars.cpp ../FuelMonitor/savecars.h \
 		/usr/include/qt5/QtCore/qabstractitemmodel.h \
 		/usr/include/qt5/QtWidgets/QDateEdit \
 		/usr/include/qt5/QtWidgets/qdatetimeedit.h \
-		/usr/include/qt5/QtCore/qdatetime.h \
 		/usr/include/qt5/QtWidgets/QDoubleSpinBox \
 		/usr/include/qt5/QtWidgets/qspinbox.h \
 		/usr/include/qt5/QtWidgets/QHeaderView \
@@ -1902,20 +1828,12 @@ savecars.o: ../FuelMonitor/savecars.cpp ../FuelMonitor/savecars.h \
 		/usr/include/qt5/QtWidgets/QPushButton \
 		/usr/include/qt5/QtWidgets/qpushbutton.h \
 		/usr/include/qt5/QtWidgets/qabstractbutton.h \
-		/usr/include/qt5/QtWidgets/QRadioButton \
-		/usr/include/qt5/QtWidgets/qradiobutton.h \
 		/usr/include/qt5/QtWidgets/QTabWidget \
 		/usr/include/qt5/QtWidgets/QWidget \
-		../FuelMonitor/gasoline.h \
-		/usr/include/qt5/QtCore/QString \
-		/usr/include/qt5/QtCore/QDate \
-		../FuelMonitor/car.h \
-		/usr/include/qt5/QtCore/QList \
 		/usr/include/qt5/QtWidgets/QMessageBox \
 		/usr/include/qt5/QtWidgets/qmessagebox.h \
 		../FuelMonitor/modifyregisters.h \
 		../FuelMonitor/deleteregisters.h \
-		../FuelMonitor/reportallcars.h \
 		../FuelMonitor/reportthiscar.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o savecars.o ../FuelMonitor/savecars.cpp
 
@@ -2029,6 +1947,11 @@ modifyregisters.o: ../FuelMonitor/modifyregisters.cpp ../FuelMonitor/modifyregis
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
+		../FuelMonitor/car.h \
+		/usr/include/qt5/QtCore/QString \
+		../FuelMonitor/gasoline.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
 		ui_modifyregisters.h \
 		/usr/include/qt5/QtCore/QVariant \
 		/usr/include/qt5/QtWidgets/QAction \
@@ -2061,7 +1984,6 @@ modifyregisters.o: ../FuelMonitor/modifyregisters.cpp ../FuelMonitor/modifyregis
 		/usr/include/qt5/QtCore/qabstractitemmodel.h \
 		/usr/include/qt5/QtWidgets/QDateEdit \
 		/usr/include/qt5/QtWidgets/qdatetimeedit.h \
-		/usr/include/qt5/QtCore/qdatetime.h \
 		/usr/include/qt5/QtWidgets/QHeaderView \
 		/usr/include/qt5/QtWidgets/qheaderview.h \
 		/usr/include/qt5/QtWidgets/qabstractitemview.h \
@@ -2078,8 +2000,8 @@ modifyregisters.o: ../FuelMonitor/modifyregisters.cpp ../FuelMonitor/modifyregis
 		/usr/include/qt5/QtWidgets/QPushButton \
 		/usr/include/qt5/QtWidgets/qpushbutton.h \
 		/usr/include/qt5/QtWidgets/qabstractbutton.h \
-		/usr/include/qt5/QtWidgets/QRadioButton \
-		/usr/include/qt5/QtWidgets/qradiobutton.h
+		/usr/include/qt5/QtWidgets/QMessageBox \
+		/usr/include/qt5/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o modifyregisters.o ../FuelMonitor/modifyregisters.cpp
 
 deleteregisters.o: ../FuelMonitor/deleteregisters.cpp ../FuelMonitor/deleteregisters.h \
@@ -2192,6 +2114,11 @@ deleteregisters.o: ../FuelMonitor/deleteregisters.cpp ../FuelMonitor/deleteregis
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
+		../FuelMonitor/car.h \
+		/usr/include/qt5/QtCore/QString \
+		../FuelMonitor/gasoline.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
 		ui_deleteregisters.h \
 		/usr/include/qt5/QtCore/QVariant \
 		/usr/include/qt5/QtWidgets/QAction \
@@ -2224,7 +2151,6 @@ deleteregisters.o: ../FuelMonitor/deleteregisters.cpp ../FuelMonitor/deleteregis
 		/usr/include/qt5/QtCore/qabstractitemmodel.h \
 		/usr/include/qt5/QtWidgets/QDateEdit \
 		/usr/include/qt5/QtWidgets/qdatetimeedit.h \
-		/usr/include/qt5/QtCore/qdatetime.h \
 		/usr/include/qt5/QtWidgets/QHeaderView \
 		/usr/include/qt5/QtWidgets/qheaderview.h \
 		/usr/include/qt5/QtWidgets/qabstractitemview.h \
@@ -2241,158 +2167,9 @@ deleteregisters.o: ../FuelMonitor/deleteregisters.cpp ../FuelMonitor/deleteregis
 		/usr/include/qt5/QtWidgets/QPushButton \
 		/usr/include/qt5/QtWidgets/qpushbutton.h \
 		/usr/include/qt5/QtWidgets/qabstractbutton.h \
-		/usr/include/qt5/QtWidgets/QRadioButton \
-		/usr/include/qt5/QtWidgets/qradiobutton.h
+		/usr/include/qt5/QtWidgets/QMessageBox \
+		/usr/include/qt5/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o deleteregisters.o ../FuelMonitor/deleteregisters.cpp
-
-reportallcars.o: ../FuelMonitor/reportallcars.cpp ../FuelMonitor/reportallcars.h \
-		/usr/include/qt5/QtWidgets/QDialog \
-		/usr/include/qt5/QtWidgets/qdialog.h \
-		/usr/include/qt5/QtWidgets/qwidget.h \
-		/usr/include/qt5/QtGui/qwindowdefs.h \
-		/usr/include/qt5/QtCore/qglobal.h \
-		/usr/include/qt5/QtCore/qconfig.h \
-		/usr/include/qt5/QtCore/qfeatures.h \
-		/usr/include/qt5/QtCore/qsystemdetection.h \
-		/usr/include/qt5/QtCore/qprocessordetection.h \
-		/usr/include/qt5/QtCore/qcompilerdetection.h \
-		/usr/include/qt5/QtCore/qglobalstatic.h \
-		/usr/include/qt5/QtCore/qatomic.h \
-		/usr/include/qt5/QtCore/qbasicatomic.h \
-		/usr/include/qt5/QtCore/qatomic_bootstrap.h \
-		/usr/include/qt5/QtCore/qgenericatomic.h \
-		/usr/include/qt5/QtCore/qatomic_msvc.h \
-		/usr/include/qt5/QtCore/qatomic_integrity.h \
-		/usr/include/qt5/QtCore/qoldbasicatomic.h \
-		/usr/include/qt5/QtCore/qatomic_vxworks.h \
-		/usr/include/qt5/QtCore/qatomic_power.h \
-		/usr/include/qt5/QtCore/qatomic_alpha.h \
-		/usr/include/qt5/QtCore/qatomic_armv7.h \
-		/usr/include/qt5/QtCore/qatomic_armv6.h \
-		/usr/include/qt5/QtCore/qatomic_armv5.h \
-		/usr/include/qt5/QtCore/qatomic_bfin.h \
-		/usr/include/qt5/QtCore/qatomic_ia64.h \
-		/usr/include/qt5/QtCore/qatomic_mips.h \
-		/usr/include/qt5/QtCore/qatomic_s390.h \
-		/usr/include/qt5/QtCore/qatomic_sh4a.h \
-		/usr/include/qt5/QtCore/qatomic_sparc.h \
-		/usr/include/qt5/QtCore/qatomic_gcc.h \
-		/usr/include/qt5/QtCore/qatomic_x86.h \
-		/usr/include/qt5/QtCore/qatomic_cxx11.h \
-		/usr/include/qt5/QtCore/qatomic_unix.h \
-		/usr/include/qt5/QtCore/qmutex.h \
-		/usr/include/qt5/QtCore/qlogging.h \
-		/usr/include/qt5/QtCore/qflags.h \
-		/usr/include/qt5/QtCore/qtypeinfo.h \
-		/usr/include/qt5/QtCore/qtypetraits.h \
-		/usr/include/qt5/QtCore/qsysinfo.h \
-		/usr/include/qt5/QtCore/qobjectdefs.h \
-		/usr/include/qt5/QtCore/qnamespace.h \
-		/usr/include/qt5/QtCore/qobjectdefs_impl.h \
-		/usr/include/qt5/QtGui/qwindowdefs_win.h \
-		/usr/include/qt5/QtCore/qobject.h \
-		/usr/include/qt5/QtCore/qstring.h \
-		/usr/include/qt5/QtCore/qchar.h \
-		/usr/include/qt5/QtCore/qbytearray.h \
-		/usr/include/qt5/QtCore/qrefcount.h \
-		/usr/include/qt5/QtCore/qarraydata.h \
-		/usr/include/qt5/QtCore/qstringbuilder.h \
-		/usr/include/qt5/QtCore/qlist.h \
-		/usr/include/qt5/QtCore/qalgorithms.h \
-		/usr/include/qt5/QtCore/qiterator.h \
-		/usr/include/qt5/QtCore/qcoreevent.h \
-		/usr/include/qt5/QtCore/qscopedpointer.h \
-		/usr/include/qt5/QtCore/qmetatype.h \
-		/usr/include/qt5/QtCore/qvarlengtharray.h \
-		/usr/include/qt5/QtCore/qcontainerfwd.h \
-		/usr/include/qt5/QtCore/qisenum.h \
-		/usr/include/qt5/QtCore/qobject_impl.h \
-		/usr/include/qt5/QtCore/qmargins.h \
-		/usr/include/qt5/QtCore/qrect.h \
-		/usr/include/qt5/QtCore/qsize.h \
-		/usr/include/qt5/QtCore/qpoint.h \
-		/usr/include/qt5/QtGui/qpaintdevice.h \
-		/usr/include/qt5/QtGui/qpalette.h \
-		/usr/include/qt5/QtGui/qcolor.h \
-		/usr/include/qt5/QtGui/qrgb.h \
-		/usr/include/qt5/QtCore/qstringlist.h \
-		/usr/include/qt5/QtCore/qdatastream.h \
-		/usr/include/qt5/QtCore/qiodevice.h \
-		/usr/include/qt5/QtCore/qpair.h \
-		/usr/include/qt5/QtCore/qregexp.h \
-		/usr/include/qt5/QtCore/qstringmatcher.h \
-		/usr/include/qt5/QtGui/qbrush.h \
-		/usr/include/qt5/QtCore/qvector.h \
-		/usr/include/qt5/QtGui/qmatrix.h \
-		/usr/include/qt5/QtGui/qpolygon.h \
-		/usr/include/qt5/QtGui/qregion.h \
-		/usr/include/qt5/QtCore/qline.h \
-		/usr/include/qt5/QtGui/qtransform.h \
-		/usr/include/qt5/QtGui/qpainterpath.h \
-		/usr/include/qt5/QtGui/qimage.h \
-		/usr/include/qt5/QtGui/qpixmap.h \
-		/usr/include/qt5/QtCore/qsharedpointer.h \
-		/usr/include/qt5/QtCore/qshareddata.h \
-		/usr/include/qt5/QtCore/qsharedpointer_impl.h \
-		/usr/include/qt5/QtCore/qhash.h \
-		/usr/include/qt5/QtGui/qfont.h \
-		/usr/include/qt5/QtGui/qfontmetrics.h \
-		/usr/include/qt5/QtGui/qfontinfo.h \
-		/usr/include/qt5/QtWidgets/qsizepolicy.h \
-		/usr/include/qt5/QtGui/qcursor.h \
-		/usr/include/qt5/QtGui/qkeysequence.h \
-		/usr/include/qt5/QtGui/qevent.h \
-		/usr/include/qt5/QtCore/qvariant.h \
-		/usr/include/qt5/QtCore/qmap.h \
-		/usr/include/qt5/QtCore/qdebug.h \
-		/usr/include/qt5/QtCore/qtextstream.h \
-		/usr/include/qt5/QtCore/qlocale.h \
-		/usr/include/qt5/QtCore/qset.h \
-		/usr/include/qt5/QtCore/qcontiguouscache.h \
-		/usr/include/qt5/QtCore/qurl.h \
-		/usr/include/qt5/QtCore/qurlquery.h \
-		/usr/include/qt5/QtCore/qfile.h \
-		/usr/include/qt5/QtCore/qfiledevice.h \
-		/usr/include/qt5/QtGui/qvector2d.h \
-		/usr/include/qt5/QtGui/qtouchdevice.h \
-		ui_reportallcars.h \
-		/usr/include/qt5/QtCore/QVariant \
-		/usr/include/qt5/QtWidgets/QAction \
-		/usr/include/qt5/QtWidgets/qaction.h \
-		/usr/include/qt5/QtGui/qicon.h \
-		/usr/include/qt5/QtWidgets/qactiongroup.h \
-		/usr/include/qt5/QtWidgets/QApplication \
-		/usr/include/qt5/QtWidgets/qapplication.h \
-		/usr/include/qt5/QtCore/qcoreapplication.h \
-		/usr/include/qt5/QtCore/qeventloop.h \
-		/usr/include/qt5/QtWidgets/qdesktopwidget.h \
-		/usr/include/qt5/QtGui/qguiapplication.h \
-		/usr/include/qt5/QtGui/qinputmethod.h \
-		/usr/include/qt5/QtWidgets/QButtonGroup \
-		/usr/include/qt5/QtWidgets/qbuttongroup.h \
-		/usr/include/qt5/QtWidgets/QHeaderView \
-		/usr/include/qt5/QtWidgets/qheaderview.h \
-		/usr/include/qt5/QtWidgets/qabstractitemview.h \
-		/usr/include/qt5/QtWidgets/qabstractscrollarea.h \
-		/usr/include/qt5/QtWidgets/qframe.h \
-		/usr/include/qt5/QtCore/qabstractitemmodel.h \
-		/usr/include/qt5/QtCore/qitemselectionmodel.h \
-		/usr/include/qt5/QtWidgets/qabstractitemdelegate.h \
-		/usr/include/qt5/QtWidgets/qstyleoption.h \
-		/usr/include/qt5/QtWidgets/qabstractspinbox.h \
-		/usr/include/qt5/QtGui/qvalidator.h \
-		/usr/include/qt5/QtCore/qregularexpression.h \
-		/usr/include/qt5/QtWidgets/qslider.h \
-		/usr/include/qt5/QtWidgets/qabstractslider.h \
-		/usr/include/qt5/QtWidgets/qstyle.h \
-		/usr/include/qt5/QtWidgets/qtabbar.h \
-		/usr/include/qt5/QtWidgets/qtabwidget.h \
-		/usr/include/qt5/QtWidgets/qrubberband.h \
-		/usr/include/qt5/QtWidgets/QLabel \
-		/usr/include/qt5/QtWidgets/qlabel.h \
-		/usr/include/qt5/QtWidgets/QTableView \
-		/usr/include/qt5/QtWidgets/qtableview.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o reportallcars.o ../FuelMonitor/reportallcars.cpp
 
 reportthiscar.o: ../FuelMonitor/reportthiscar.cpp ../FuelMonitor/reportthiscar.h \
 		/usr/include/qt5/QtWidgets/QDialog \
@@ -2504,6 +2281,11 @@ reportthiscar.o: ../FuelMonitor/reportthiscar.cpp ../FuelMonitor/reportthiscar.h
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
+		../FuelMonitor/car.h \
+		/usr/include/qt5/QtCore/QString \
+		../FuelMonitor/gasoline.h \
+		/usr/include/qt5/QtCore/QDate \
+		/usr/include/qt5/QtCore/qdatetime.h \
 		ui_reportthiscar.h \
 		/usr/include/qt5/QtCore/QVariant \
 		/usr/include/qt5/QtWidgets/QAction \
@@ -2544,7 +2326,10 @@ reportthiscar.o: ../FuelMonitor/reportthiscar.cpp ../FuelMonitor/reportthiscar.h
 		/usr/include/qt5/QtGui/qtextcursor.h \
 		/usr/include/qt5/QtGui/qtextformat.h \
 		/usr/include/qt5/QtGui/qpen.h \
-		/usr/include/qt5/QtGui/qtextoption.h
+		/usr/include/qt5/QtGui/qtextoption.h \
+		/usr/include/qt5/QtWidgets/QPushButton \
+		/usr/include/qt5/QtWidgets/qpushbutton.h \
+		/usr/include/qt5/QtWidgets/qabstractbutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o reportthiscar.o ../FuelMonitor/reportthiscar.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
@@ -2561,9 +2346,6 @@ moc_modifyregisters.o: moc_modifyregisters.cpp
 
 moc_deleteregisters.o: moc_deleteregisters.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_deleteregisters.o moc_deleteregisters.cpp
-
-moc_reportallcars.o: moc_reportallcars.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_reportallcars.o moc_reportallcars.cpp
 
 moc_reportthiscar.o: moc_reportthiscar.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_reportthiscar.o moc_reportthiscar.cpp

@@ -20,7 +20,6 @@ SOURCES += main.cpp\
     savecars.cpp \
     modifyregisters.cpp \
     deleteregisters.cpp \
-    reportallcars.cpp \
     reportthiscar.cpp
 
 HEADERS  += mainwindow.h \
@@ -30,7 +29,6 @@ HEADERS  += mainwindow.h \
     savecars.h \
     modifyregisters.h \
     deleteregisters.h \
-    reportallcars.h \
     reportthiscar.h
 
 FORMS    += mainwindow.ui \
@@ -38,5 +36,4 @@ FORMS    += mainwindow.ui \
     savecars.ui \
     modifyregisters.ui \
     deleteregisters.ui \
-    reportallcars.ui \
     reportthiscar.ui

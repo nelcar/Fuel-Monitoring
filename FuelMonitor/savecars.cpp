@@ -52,14 +52,6 @@ void savecars::on_pushButton_3_clicked()
     x.exec();
 }
 
-void savecars::on_pushButton_2_clicked()
-{
-    reportallcars x;
-    x.setModal(true);
-    x.exec();
-}
-
-
 
 void savecars::on_addNewRegister_clicked()
 {

@@ -108,13 +108,9 @@ void savecars::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         savecars *_t = static_cast<savecars *>(_o);
         switch (_id) {
         case 0: _t->on_pushButton_4_clicked(); break;
-
         case 2: _t->on_pushButton_10_clicked(); break;
         case 3: _t->on_pushButton_3_clicked(); break;
-        case 4: _t->on_pushButton_2_clicked(); break;
-
         case 6: _t->on_addNewRegister_clicked(); break;
-
         case 8: _t->on_MselectThisCar_clicked(); break;
         case 9: _t->on_Mmodify_clicked(); break;
         case 10: _t->on_pushButton_7_clicked(); break;

@@ -29,7 +29,6 @@ QT_BEGIN_NAMESPACE
 class Ui_savecars
 {
 public:
-    QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QComboBox *SCchooseCar;
     QLabel *label;
@@ -93,9 +92,6 @@ public:
         if (savecars->objectName().isEmpty())
             savecars->setObjectName(QStringLiteral("savecars"));
         savecars->resize(688, 418);
-        pushButton_2 = new QPushButton(savecars);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(30, 350, 261, 27));
         pushButton_3 = new QPushButton(savecars);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setGeometry(QRect(410, 350, 261, 27));
@@ -287,7 +283,6 @@ public:
     void retranslateUi(QDialog *savecars)
     {
         savecars->setWindowTitle(QApplication::translate("savecars", "Dialog", 0));
-        pushButton_2->setText(QApplication::translate("savecars", "REPORT ALL CARS", 0));
         pushButton_3->setText(QApplication::translate("savecars", "COMPLETE REPORT OF THIS CAR", 0));
         label->setText(QApplication::translate("savecars", "Choose a car:", 0));
 #ifndef QT_NO_ACCESSIBILITY

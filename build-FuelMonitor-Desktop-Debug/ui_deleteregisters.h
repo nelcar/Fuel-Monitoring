@@ -20,7 +20,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -28,21 +27,22 @@ class Ui_deleteregisters
 {
 public:
     QPushButton *pushButton_2;
-    QRadioButton *radioButton_2;
-    QRadioButton *radioButton_4;
-    QRadioButton *radioButton_3;
-    QLineEdit *lineEdit_2;
-    QComboBox *comboBox;
-    QLabel *label_4;
-    QLineEdit *lineEdit;
-    QLabel *label_2;
+    QComboBox *DRselectedRegister;
     QLabel *label;
     QPushButton *pushButton;
-    QRadioButton *radioButton;
+    QLabel *label_2;
+    QDateEdit *DRdate;
+    QLineEdit *DRgallons;
+    QLineEdit *DRkilometers;
+    QLineEdit *DRmiles;
+    QLabel *label_7;
+    QLabel *label_6;
+    QLineEdit *DRliters;
     QLabel *label_5;
-    QDateEdit *dateEdit;
     QLabel *label_3;
-    QLineEdit *lineEdit_3;
+    QLabel *label_4;
+    QLineEdit *DRcurrency;
+    QPushButton *pushButton_3;
 
     void setupUi(QDialog *deleteregisters)
     {
@@ -52,30 +52,9 @@ public:
         pushButton_2 = new QPushButton(deleteregisters);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(10, 96, 99, 101));
-        radioButton_2 = new QRadioButton(deleteregisters);
-        radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
-        radioButton_2->setGeometry(QRect(510, 170, 81, 22));
-        radioButton_4 = new QRadioButton(deleteregisters);
-        radioButton_4->setObjectName(QStringLiteral("radioButton_4"));
-        radioButton_4->setGeometry(QRect(510, 90, 101, 22));
-        radioButton_3 = new QRadioButton(deleteregisters);
-        radioButton_3->setObjectName(QStringLiteral("radioButton_3"));
-        radioButton_3->setGeometry(QRect(430, 90, 71, 22));
-        lineEdit_2 = new QLineEdit(deleteregisters);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(280, 130, 141, 27));
-        comboBox = new QComboBox(deleteregisters);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setGeometry(QRect(250, 10, 281, 31));
-        label_4 = new QLabel(deleteregisters);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(150, 180, 111, 17));
-        lineEdit = new QLineEdit(deleteregisters);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(280, 90, 141, 27));
-        label_2 = new QLabel(deleteregisters);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(150, 60, 67, 17));
+        DRselectedRegister = new QComboBox(deleteregisters);
+        DRselectedRegister->setObjectName(QStringLiteral("DRselectedRegister"));
+        DRselectedRegister->setGeometry(QRect(250, 10, 281, 31));
         label = new QLabel(deleteregisters);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(20, 10, 211, 31));
@@ -87,21 +66,45 @@ public:
         pushButton = new QPushButton(deleteregisters);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(10, 60, 99, 27));
-        radioButton = new QRadioButton(deleteregisters);
-        radioButton->setObjectName(QStringLiteral("radioButton"));
-        radioButton->setGeometry(QRect(430, 170, 71, 22));
+        label_2 = new QLabel(deleteregisters);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(140, 60, 67, 17));
+        DRdate = new QDateEdit(deleteregisters);
+        DRdate->setObjectName(QStringLiteral("DRdate"));
+        DRdate->setGeometry(QRect(270, 50, 141, 27));
+        DRgallons = new QLineEdit(deleteregisters);
+        DRgallons->setObjectName(QStringLiteral("DRgallons"));
+        DRgallons->setGeometry(QRect(480, 180, 141, 27));
+        DRkilometers = new QLineEdit(deleteregisters);
+        DRkilometers->setObjectName(QStringLiteral("DRkilometers"));
+        DRkilometers->setGeometry(QRect(270, 90, 141, 27));
+        DRmiles = new QLineEdit(deleteregisters);
+        DRmiles->setObjectName(QStringLiteral("DRmiles"));
+        DRmiles->setGeometry(QRect(480, 90, 141, 27));
+        label_7 = new QLabel(deleteregisters);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(420, 180, 67, 17));
+        label_6 = new QLabel(deleteregisters);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(420, 100, 67, 17));
+        DRliters = new QLineEdit(deleteregisters);
+        DRliters->setObjectName(QStringLiteral("DRliters"));
+        DRliters->setGeometry(QRect(270, 180, 141, 27));
         label_5 = new QLabel(deleteregisters);
         label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(150, 100, 91, 17));
-        dateEdit = new QDateEdit(deleteregisters);
-        dateEdit->setObjectName(QStringLiteral("dateEdit"));
-        dateEdit->setGeometry(QRect(280, 50, 141, 27));
+        label_5->setGeometry(QRect(140, 100, 91, 17));
         label_3 = new QLabel(deleteregisters);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(150, 140, 121, 17));
-        lineEdit_3 = new QLineEdit(deleteregisters);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(280, 170, 141, 27));
+        label_3->setGeometry(QRect(140, 140, 121, 17));
+        label_4 = new QLabel(deleteregisters);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(140, 180, 111, 17));
+        DRcurrency = new QLineEdit(deleteregisters);
+        DRcurrency->setObjectName(QStringLiteral("DRcurrency"));
+        DRcurrency->setGeometry(QRect(270, 130, 141, 27));
+        pushButton_3 = new QPushButton(deleteregisters);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(540, 10, 61, 27));
 
         retranslateUi(deleteregisters);
 
@@ -112,16 +115,15 @@ public:
     {
         deleteregisters->setWindowTitle(QApplication::translate("deleteregisters", "Delete Registrer", 0));
         pushButton_2->setText(QApplication::translate("deleteregisters", "Delete", 0));
-        radioButton_2->setText(QApplication::translate("deleteregisters", "Gallons", 0));
-        radioButton_4->setText(QApplication::translate("deleteregisters", "Kilometers", 0));
-        radioButton_3->setText(QApplication::translate("deleteregisters", "Miles", 0));
-        label_4->setText(QApplication::translate("deleteregisters", "Amount of fuel:", 0));
-        label_2->setText(QApplication::translate("deleteregisters", "Date:", 0));
-        label->setText(QApplication::translate("deleteregisters", "Select Registrer:", 0));
+        label->setText(QApplication::translate("deleteregisters", "Select Register:", 0));
         pushButton->setText(QApplication::translate("deleteregisters", "Select this", 0));
-        radioButton->setText(QApplication::translate("deleteregisters", "Liters", 0));
-        label_5->setText(QApplication::translate("deleteregisters", "Podometer:", 0));
+        label_2->setText(QApplication::translate("deleteregisters", "Date:", 0));
+        label_7->setText(QApplication::translate("deleteregisters", "Gallons:", 0));
+        label_6->setText(QApplication::translate("deleteregisters", "Miles:", 0));
+        label_5->setText(QApplication::translate("deleteregisters", "Kilometers:", 0));
         label_3->setText(QApplication::translate("deleteregisters", "Amount of value:", 0));
+        label_4->setText(QApplication::translate("deleteregisters", "Liters:", 0));
+        pushButton_3->setText(QApplication::translate("deleteregisters", "Refresh", 0));
     } // retranslateUi
 
 };

@@ -33,9 +33,6 @@ void modifyregisters::on_pushButton_3_clicked()
          y = static_cast<gasoline>(fuel.at(i));
          ui->MselectRegister->addItem(y.getDate().toString());
      }
-
-
-
 }
 
 void modifyregisters::on_pushButton_clicked()

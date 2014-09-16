@@ -118,7 +118,7 @@ public:
         label_2->setText(QApplication::translate("modifyregisters", "Date:", 0));
         label_5->setText(QApplication::translate("modifyregisters", "Kilometers:", 0));
         label_3->setText(QApplication::translate("modifyregisters", "Amount of value:", 0));
-        label->setText(QApplication::translate("modifyregisters", "Select Registrer:", 0));
+        label->setText(QApplication::translate("modifyregisters", "Select Register:", 0));
         pushButton->setText(QApplication::translate("modifyregisters", "Select this", 0));
         pushButton_2->setText(QApplication::translate("modifyregisters", "Save", 0));
         pushButton_3->setText(QApplication::translate("modifyregisters", "Refresh", 0));

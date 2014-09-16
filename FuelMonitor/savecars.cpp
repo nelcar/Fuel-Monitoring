@@ -40,7 +40,7 @@ void savecars::on_pushButton_4_clicked()
 
 void savecars::on_pushButton_10_clicked()
 {
-    deleteregisters x;
+    deleteregisters x(this,ui->SCchooseCar->currentIndex(),this->carList);
     x.setModal(true);
     x.exec();
 }
@@ -207,5 +207,57 @@ void savecars::on_pushButton_7_clicked()
     this->carList->push_back(x);
     QMessageBox msgBox;
     msgBox.setText("Your Car was successfuly modify\nDon't forget push Refresh");
+    msgBox.exec();
+}
+
+void savecars::on_pushButton_9_clicked()
+{
+    int selected = ui->SCchooseCar->currentIndex();
+    QString nickname;
+    QString manufacturer;
+    QString model;
+    QString year;
+    QString style;
+    QString numberPlate;
+    QString engine;
+    QString cylinder;
+    Car *x = NULL;
+
+    x = static_cast<Car*>(carList->at(selected));
+    nickname = x->getNickname();
+    manufacturer = x->getManufacturer();
+    model = x->getModel();
+    year = x->getYear();
+    style = x->getStyle();
+    numberPlate = x->getNumberPlate();
+    engine = x->getEngine();
+    cylinder = x->getCylinderCapacity();
+
+    ui->DnickName->setText(nickname);
+    ui->DmanuFacturer->setText(manufacturer);
+    ui->Dmodel->setText(model);
+    ui->Dyear->setText(year);
+    ui->Dstyle->setText(style);
+    ui->DnumberPlate->setText(numberPlate);
+    ui->Dengine->setText(engine);
+    ui->Dcylinder->setText(cylinder);
+
+}
+
+void savecars::on_pushButton_8_clicked()
+{
+    int selected = ui->SCchooseCar->currentIndex();
+    this->carList->erase(this->carList->begin()+selected);
+
+    ui->DnickName->setText("");
+    ui->DmanuFacturer->setText("");
+    ui->Dmodel->setText("");
+    ui->Dyear->setText("");
+    ui->Dstyle->setText("");
+    ui->DnumberPlate->setText("");
+    ui->Dengine->setText("");
+    ui->Dcylinder->setText("");
+    QMessageBox msgBox;
+    msgBox.setText("Your Car was successfuly delete\nDon't forget push Refresh");
     msgBox.exec();
 }

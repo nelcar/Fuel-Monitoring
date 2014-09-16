@@ -26,56 +26,7 @@
     <string>Delete</string>
    </property>
   </widget>
-  <widget class="QRadioButton" name="radioButton_2">
-   <property name="geometry">
-    <rect>
-     <x>510</x>
-     <y>170</y>
-     <width>81</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Gallons</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_4">
-   <property name="geometry">
-    <rect>
-     <x>510</x>
-     <y>90</y>
-     <width>101</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Kilometers</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_3">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>90</y>
-     <width>71</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Miles</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>130</y>
-     <width>141</width>
-     <height>27</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="DRselectedRegister">
    <property name="geometry">
     <rect>
      <x>250</x>
@@ -83,42 +34,6 @@
      <width>281</width>
      <height>31</height>
     </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>180</y>
-     <width>111</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Amount of fuel:</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>90</y>
-     <width>141</width>
-     <height>27</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>60</y>
-     <width>67</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Date:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -138,7 +53,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Select Registrer:</string>
+    <string>Select Register:</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -154,46 +69,112 @@
     <string>Select this</string>
    </property>
   </widget>
-  <widget class="QRadioButton" name="radioButton">
+  <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>170</y>
-     <width>71</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Liters</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>100</y>
-     <width>91</width>
+     <x>140</x>
+     <y>60</y>
+     <width>67</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Podometer:</string>
+    <string>Date:</string>
    </property>
   </widget>
-  <widget class="QDateEdit" name="dateEdit">
+  <widget class="QDateEdit" name="DRdate">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>270</x>
      <y>50</y>
      <width>141</width>
      <height>27</height>
     </rect>
    </property>
   </widget>
+  <widget class="QLineEdit" name="DRgallons">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>180</y>
+     <width>141</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="DRkilometers">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>90</y>
+     <width>141</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="DRmiles">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>90</y>
+     <width>141</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>180</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Gallons:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>100</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Miles:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="DRliters">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>180</y>
+     <width>141</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>100</y>
+     <width>91</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Kilometers:</string>
+   </property>
+  </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>140</x>
      <y>140</y>
      <width>121</width>
      <height>17</height>
@@ -203,14 +184,40 @@
     <string>Amount of value:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>170</y>
+     <x>140</x>
+     <y>180</y>
+     <width>111</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Liters:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="DRcurrency">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>130</y>
      <width>141</width>
      <height>27</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>10</y>
+     <width>61</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Refresh</string>
    </property>
   </widget>
  </widget>

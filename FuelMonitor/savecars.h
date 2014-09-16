@@ -33,6 +33,12 @@ private slots:
 
     void on_SCaddMiles_clicked();
 
+    void on_MselectThisCar_clicked();
+
+    void on_Mmodify_clicked();
+
+    void on_pushButton_7_clicked();
+
 private:
     Ui::savecars *ui;
 };

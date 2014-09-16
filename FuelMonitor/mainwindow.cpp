@@ -71,11 +71,14 @@ void MainWindow::on_pushButton_2_clicked()
                  << y.getMiles() << ","
                  << y.getKilometers() << ","
                  << y.getLiters() << ","
-                 << y.getGallons();
+                 << y.getGallons()<<",";
         }
         File << "\n";
     }
     File.close();
+    QMessageBox msgBox;
+    msgBox.setText("successfully saved files");
+    msgBox.exec();
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -94,11 +97,12 @@ void MainWindow::on_pushButton_clicked()
     File.close();
     File.open(route.c_str(),ios::in); //open the file
     vector<gasoline> fuel;
+    gasoline g;
     while(con2 < con-1){
+        cout << "size de gasoline principio while" << fuel.size() <<endl;
         cout << "con2: " << con2 << endl;
         cout << "con: " << con << endl;
         con2++;
-        gasoline g;
         getline(File,lines);
         linestaken =QString::fromStdString(lines);
         parts = linestaken.split(",");
@@ -126,55 +130,12 @@ void MainWindow::on_pushButton_clicked()
             cout << "counter2 principio for:" << counter2<<endl;
             if(counter > 6){
                 if(counter2 == 5){
-                    if(counter2 == 0){
-                        date = QDate::fromString(parts[position]);
-                        g.setDate(date);
-                        fuel.push_back(g);
-                        position++;
-                        counter--;
-                        counter2=0;
-
-                    }
-                    else if(counter2 == 1){
-                        currency = QString::fromStdString(parts[position].toStdString()).toDouble();
-                        g.setCurrency(currency);
-                        fuel.push_back(g);
-                        position++;
-                        counter--;
-                        counter2=0;
-                    }
-                    else if(counter2 == 2){
-                        miles = QString::fromStdString(parts[position].toStdString()).toDouble();
-                        g.setMiles(miles);
-                        fuel.push_back(g);
-                        position++;
-                        counter--;
-                        counter2=0;
-                    }
-                    else if(counter2 == 3){
-                        kilometers = QString::fromStdString(parts[position].toStdString()).toDouble();
-                        g.setKilometers(kilometers);
-                        fuel.push_back(g);
-                        position++;
-                        counter--;
-                        counter2=0;
-                    }
-                    else if(counter2 == 4){
-                        liters = QString::fromStdString(parts[position].toStdString()).toDouble();
-                        g.setLiters(liters);
-                        fuel.push_back(g);
-                        position++;
-                        counter--;
-                        counter2=0;
-                    }
-                    else if(counter2 == 5){
                         gallons = QString::fromStdString(parts[position].toStdString()).toDouble();
                         g.setGallons(gallons);
                         fuel.push_back(g);
                         position++;
                         counter--;
                         counter2=0;
-                    }
                 }else{
                     if(counter2 == 0){
                         date = QDate::fromString(parts[position]);
@@ -210,48 +171,14 @@ void MainWindow::on_pushButton_clicked()
                         counter--;
                         counter2++;
                         g.setLiters(liters);
-                    }
-                    else if(counter2 == 5){
-                        gallons = QString::fromStdString(parts[position].toStdString()).toDouble();
-                        position++;
-                        counter--;
-                        counter2++;
-                        g.setGallons(gallons);
                     }
                 }
             }else{
                 cout << "counter2 ultimo:" << counter2<<endl;
                 if(counter2 == 5){
-                    if(counter2 == 0){
-                        date = QDate::fromString(parts[position]);
-                        g.setDate(date);
-                        fuel.push_back(g);
-                    }
-                    else if(counter2 == 1){
-                        currency = QString::fromStdString(parts[position].toStdString()).toDouble();
-                        g.setCurrency(currency);
-                        fuel.push_back(g);
-                    }
-                    else if(counter2 == 2){
-                        miles = QString::fromStdString(parts[position].toStdString()).toDouble();
-                        g.setMiles(miles);
-                        fuel.push_back(g);
-                    }
-                    else if(counter2 == 3){
-                        kilometers = QString::fromStdString(parts[position].toStdString()).toDouble();
-                        g.setKilometers(kilometers);
-                        fuel.push_back(g);
-                    }
-                    else if(counter2 == 4){
-                        liters = QString::fromStdString(parts[position].toStdString()).toDouble();
-                        g.setLiters(liters);
-                        fuel.push_back(g);
-                    }
-                    else if(counter2 == 5){
                         gallons = QString::fromStdString(parts[position].toStdString()).toDouble();
                         g.setGallons(gallons);
                         fuel.push_back(g);
-                    }
                 }else{
 
                     if(counter2 == 0){
@@ -283,12 +210,6 @@ void MainWindow::on_pushButton_clicked()
                         position++;
                         counter2++;
                         g.setLiters(liters);
-                    }
-                    else if(counter2 == 5){
-                        gallons = QString::fromStdString(parts[position].toStdString()).toDouble();
-                        position++;
-                        counter2++;
-                        g.setGallons(gallons);
                     }
                 }
 
@@ -308,5 +229,8 @@ void MainWindow::on_pushButton_clicked()
         carList->push_back(car);
     }
     File.close();
+    QMessageBox msgBox;
+    msgBox.setText("successfully uploaded files");
+    msgBox.exec();
 }
 

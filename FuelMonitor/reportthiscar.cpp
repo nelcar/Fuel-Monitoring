@@ -19,10 +19,10 @@ reportthiscar::~reportthiscar()
 void reportthiscar::on_pushButton_clicked()
 {
     double gallons;
-    double kilometers;
+    double kilometers,kilometers2;
     int days;
     double liters;
-    double miles;
+    double miles,miles2;
     double currency;
     double totalGallons=0;
     double totalKilometers=0;
@@ -45,9 +45,7 @@ void reportthiscar::on_pushButton_clicked()
         currency = y.getCurrency();
 
         totalGallons += gallons;
-        totalKilometers += kilometers;
         totalLiters += liters;
-        totalMiles += miles;
         totalCurrency += currency;
 
         if(i < x->getGasolineList().size()-1){
@@ -58,6 +56,12 @@ void reportthiscar::on_pushButton_clicked()
 
             days = date1.daysTo(date2);
             totalDays +=days;
+
+            kilometers2 = z.getKilometers();
+            totalKilometers += kilometers2-kilometers;
+
+            miles2 = z.getMiles();
+            totalMiles += miles2-miles;
         }
     }
 

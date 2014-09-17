@@ -5,7 +5,6 @@
 #include "QMessageBox"
 #include "modifyregisters.h"
 #include "deleteregisters.h"
-#include "reportallcars.h"
 #include "reportthiscar.h"
 #include "QDate"
 #include <iostream>
@@ -108,6 +107,7 @@ void savecars::on_addNewRegister_clicked()
     ui->SCaddPodometer->setValue(0);
     ui->SCaddAmountFuel->setValue(0);
     ui->SCaddAmountValue->setValue(0);
+    ui->SCchooseCar->clear();
 }
 
 

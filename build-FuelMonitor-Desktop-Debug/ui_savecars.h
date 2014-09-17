@@ -282,7 +282,7 @@ public:
 
     void retranslateUi(QDialog *savecars)
     {
-        savecars->setWindowTitle(QApplication::translate("savecars", "Dialog", 0));
+        savecars->setWindowTitle(QApplication::translate("savecars", "Fuel Monitor", 0));
         pushButton_3->setText(QApplication::translate("savecars", "COMPLETE REPORT OF THIS CAR", 0));
         label->setText(QApplication::translate("savecars", "Choose a car:", 0));
 #ifndef QT_NO_ACCESSIBILITY

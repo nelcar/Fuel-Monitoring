@@ -335,7 +335,7 @@ public:
 
     void retranslateUi(QDialog *reportthiscar)
     {
-        reportthiscar->setWindowTitle(QApplication::translate("reportthiscar", "Dialog", 0));
+        reportthiscar->setWindowTitle(QApplication::translate("reportthiscar", "Report", 0));
         label->setText(QApplication::translate("reportthiscar", "Gallons/Kilometers:", 0));
         label_2->setText(QApplication::translate("reportthiscar", "Gallons/Miles:", 0));
         label_3->setText(QApplication::translate("reportthiscar", "Liters/Kilometers:", 0));
